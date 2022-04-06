@@ -22,15 +22,20 @@
     var CONFIG = {"hostname":"joserii.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":true},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Joseri的小站">
-<meta property="og:url" content="https://joserii.github.io/tags/Codeforces/index.html">
+  <meta name="description" content="不定期更新蓝桥杯省赛赛题题解2021C++A组T8   左孩子右兄弟树形 dp + dfs    太经典了！ 基本思路就是递归找每个子节点的dp值 dp值为当前节点的兄弟数+子树的树高   维护最大值 123456789101112131415161718192021222324252627282930313233&#x2F;&#x2F; http:&#x2F;&#x2F;lx.lanqiao.cn&#x2F;problem.page?gpid&#x3D;">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Lanqiao">
+<meta property="og:url" content="https://joserii.github.io/2022/04/06/Lanqiao/index.html">
 <meta property="og:site_name" content="Joseri的小站">
+<meta property="og:description" content="不定期更新蓝桥杯省赛赛题题解2021C++A组T8   左孩子右兄弟树形 dp + dfs    太经典了！ 基本思路就是递归找每个子节点的dp值 dp值为当前节点的兄弟数+子树的树高   维护最大值 123456789101112131415161718192021222324252627282930313233&#x2F;&#x2F; http:&#x2F;&#x2F;lx.lanqiao.cn&#x2F;problem.page?gpid&#x3D;">
 <meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2022-04-06T04:18:36.000Z">
+<meta property="article:modified_time" content="2022-04-06T04:22:26.121Z">
 <meta property="article:author" content="Joseri Chen">
+<meta property="article:tag" content="蓝桥杯">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="https://joserii.github.io/tags/Codeforces/">
+<link rel="canonical" href="https://joserii.github.io/2022/04/06/Lanqiao/">
 
 
 <script id="page-configurations">
@@ -38,12 +43,12 @@
   CONFIG.page = {
     sidebar: "",
     isHome : false,
-    isPost : false,
+    isPost : true,
     lang   : 'zh-CN'
   };
 </script>
 
-  <title>标签: Codeforces | Joseri的小站</title>
+  <title>Lanqiao | Joseri的小站</title>
   
 
 
@@ -145,51 +150,126 @@
         <div class="content-wrap">
           
 
-          <div class="content tag">
+          <div class="content post posts-expand">
             
 
+    
   
   
-  
-  <div class="post-block">
-    <div class="posts-collapse">
-      <div class="collection-title">
-        <h2 class="collection-header">Codeforces
-          <small>标签</small>
-        </h2>
-      </div>
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://joserii.github.io/2022/04/06/Lanqiao/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/author.jpg">
+      <meta itemprop="name" content="Joseri Chen">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Joseri的小站">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Lanqiao
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2022-04-06 12:18:36 / 修改时间：12:22:26" itemprop="dateCreated datePublished" datetime="2022-04-06T12:18:36+08:00">2022-04-06</time>
+            </span>
+
+          
+            <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span><br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>668</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-    <div class="collection-year">
-      <span class="collection-header">2022</span>
-    </div>
+        <h1 id="不定期更新蓝桥杯省赛赛题题解"><a href="#不定期更新蓝桥杯省赛赛题题解" class="headerlink" title="不定期更新蓝桥杯省赛赛题题解"></a>不定期更新蓝桥杯省赛赛题题解</h1><h2 id="2021C-A组"><a href="#2021C-A组" class="headerlink" title="2021C++A组"></a>2021C++A组</h2><h3 id="T8-左孩子右兄弟"><a href="#T8-左孩子右兄弟" class="headerlink" title="T8   左孩子右兄弟"></a>T8   左孩子右兄弟</h3><p>树形 dp + dfs    太经典了！</p>
+<p>基本思路就是递归找每个子节点的dp值</p>
+<p>dp值为当前节点的兄弟数+子树的树高   维护最大值</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// http://lx.lanqiao.cn/problem.page?gpid=T2898</span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="keyword">typedef</span> <span class="type">long</span> <span class="type">long</span> ll;</span><br><span class="line"><span class="keyword">typedef</span> pair&lt;<span class="type">int</span>, <span class="type">int</span>&gt; pii;</span><br><span class="line"><span class="type">const</span> <span class="type">int</span> INF = <span class="number">0x7fffffff</span>;</span><br><span class="line"><span class="type">const</span> <span class="type">int</span> N = <span class="number">1e5</span> + <span class="number">5</span>;</span><br><span class="line"><span class="type">const</span> <span class="type">int</span> mod = <span class="number">1e9</span> + <span class="number">7</span>;</span><br><span class="line"></span><br><span class="line">vector&lt;<span class="type">int</span>&gt; G[N];</span><br><span class="line"><span class="type">int</span> dp[N];</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">dfs</span><span class="params">(<span class="type">int</span> u)</span> </span>&#123;</span><br><span class="line">  dp[u] = G[u].<span class="built_in">size</span>();</span><br><span class="line">  <span class="type">int</span> mx = <span class="number">0</span>;</span><br><span class="line">  <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; G[u].<span class="built_in">size</span>(); i++) &#123;</span><br><span class="line">    <span class="type">int</span> v = G[u][i];</span><br><span class="line">    <span class="built_in">dfs</span>(v);</span><br><span class="line">    mx = <span class="built_in">max</span>(mx, dp[v]);</span><br><span class="line">  &#125;</span><br><span class="line">  dp[u] += mx;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">  <span class="type">int</span> n;</span><br><span class="line">  cin &gt;&gt; n;</span><br><span class="line">  <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">2</span>; i &lt;= n; i++) &#123;</span><br><span class="line">    <span class="type">int</span> x;</span><br><span class="line">    cin &gt;&gt; x;</span><br><span class="line">    G[x].<span class="built_in">push_back</span>(i);</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="built_in">dfs</span>(<span class="number">1</span>);</span><br><span class="line">  cout &lt;&lt; dp[<span class="number">1</span>] &lt;&lt; endl;</span><br><span class="line">  <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2022-04-02T10:13:46+08:00"
-              content="2022-04-02">
-          04-02
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2022/04/02/cf2022-4-1/" itemprop="url">
-            <span itemprop="name">Codeforces愚人节快乐！</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
 
     </div>
+
+    
+    
+    
+        <div class="reward-container">
+  <div>您的支持将鼓励我继续创作！</div>
+  <button onclick="var qr = document.getElementById('qr'); qr.style.display = (qr.style.display === 'none') ? 'block' : 'none';">
+    打赏
+  </button>
+  <div id="qr" style="display: none;">
+      
+      <div style="display: inline-block;">
+        <img src="/images/wechatpay.jpg" alt="Joseri Chen 微信支付">
+        <p>微信支付</p>
+      </div>
+      
+      <div style="display: inline-block;">
+        <img src="/images/alipay.jpg" alt="Joseri Chen 支付宝">
+        <p>支付宝</p>
+      </div>
+
   </div>
-  
-  
-  
+</div>
 
+
+      <footer class="post-footer">
+          
+          <div class="post-tags">
+              <a href="/tags/%E8%93%9D%E6%A1%A5%E6%9D%AF/" rel="tag"><i class="fa fa-tag"></i> 蓝桥杯</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2022/04/03/devfast/" rel="prev" title="devfast">
+      <i class="fa fa-chevron-left"></i> devfast
+    </a></div>
+      <div class="post-nav-item"></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
   
 
 
@@ -242,6 +322,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%B8%8D%E5%AE%9A%E6%9C%9F%E6%9B%B4%E6%96%B0%E8%93%9D%E6%A1%A5%E6%9D%AF%E7%9C%81%E8%B5%9B%E8%B5%9B%E9%A2%98%E9%A2%98%E8%A7%A3"><span class="nav-number">1.</span> <span class="nav-text">不定期更新蓝桥杯省赛赛题题解</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#2021C-A%E7%BB%84"><span class="nav-number">1.1.</span> <span class="nav-text">2021C++A组</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#T8-%E5%B7%A6%E5%AD%A9%E5%AD%90%E5%8F%B3%E5%85%84%E5%BC%9F"><span class="nav-number">1.1.1.</span> <span class="nav-text">T8   左孩子右兄弟</span></a></li></ol></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
