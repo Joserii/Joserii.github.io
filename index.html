@@ -298,10 +298,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              
 
-              <time title="创建时间：2022-04-06 12:18:36 / 修改时间：13:41:46" itemprop="dateCreated datePublished" datetime="2022-04-06T12:18:36+08:00">2022-04-06</time>
+              <time title="创建时间：2022-04-06 12:18:36" itemprop="dateCreated datePublished" datetime="2022-04-06T12:18:36+08:00">2022-04-06</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2022-04-07 17:12:19" itemprop="dateModified" datetime="2022-04-07T17:12:19+08:00">2022-04-07</time>
+              </span>
 
           <br>
             <span class="post-meta-item" title="本文字数">
@@ -309,14 +315,14 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>1.4k</span>
+              <span>2k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
                 <i class="far fa-clock"></i>
               </span>
                 <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>1 分钟</span>
+              <span>2 分钟</span>
             </span>
 
         </div>
@@ -328,7 +334,57 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h1 id="不定期更新蓝桥杯省赛赛题题解"><a href="#不定期更新蓝桥杯省赛赛题题解" class="headerlink" title="不定期更新蓝桥杯省赛赛题题解"></a>不定期更新蓝桥杯省赛赛题题解</h1><h2 id="2021C-A组"><a href="#2021C-A组" class="headerlink" title="2021C++A组"></a>2021C++A组</h2><h3 id="T8-左孩子右兄弟"><a href="#T8-左孩子右兄弟" class="headerlink" title="T8   左孩子右兄弟"></a>T8   左孩子右兄弟</h3><p>树形 dp + dfs    太经典了！</p>
+          <h1 id="不定期更新蓝桥杯省赛赛题题解"><a href="#不定期更新蓝桥杯省赛赛题题解" class="headerlink" title="不定期更新蓝桥杯省赛赛题题解"></a>不定期更新蓝桥杯省赛赛题题解</h1><p>一些关于数据范围的小Tips</p>
+<p>有时候我们可以根据数据范围来确定算法</p>
+<table>
+<thead>
+<tr>
+<th>时间复杂度</th>
+<th>常用算法</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>N&lt;&#x3D;30   &#x3D;&gt;指数级</td>
+<td>dfs+剪枝  状态压缩dp</td>
+</tr>
+<tr>
+<td>N&lt;&#x3D;100   &#x3D;&gt;  O(N<sup>3</sup> )</td>
+<td>floyd   dp   高斯消元</td>
+</tr>
+<tr>
+<td>N&lt;&#x3D;1000   &#x3D;&gt;  O(N<sup>2</sup> )    O(N<sup>2</sup>logN )</td>
+<td>dp  二分  朴素dijkstra  朴素Prim  Bellman-Ford</td>
+</tr>
+<tr>
+<td>N&lt;&#x3D;10000   &#x3D;&gt;  O(N * sqrt(N)  )</td>
+<td>块状链表  分块   莫队</td>
+</tr>
+<tr>
+<td>N&lt;&#x3D;100000   &#x3D;&gt;  O(N * logN)</td>
+<td>各种sort  线段树  树状数组  set&#x2F;map   heap  拓扑排序  堆优化dijkstra    堆优化Prim   spfa   求凸包   半平面交    二分    CDQ分治   整体二分</td>
+</tr>
+<tr>
+<td>N&lt;&#x3D;1000000   &#x3D;&gt;  O(N)或者常数较小的O(N * logN)</td>
+<td>O(N):    单调队列  hash  双指针扫描  并查集  kmp  AC自动机    <br />小常数NlogN:   sort  树状数组  heap  dijkstra  spfa</td>
+</tr>
+<tr>
+<td>N&lt;&#x3D;1e8   &#x3D;&gt;   O(N)</td>
+<td>双指针扫描   kmp   AC自动机   线性筛素数</td>
+</tr>
+<tr>
+<td>N&lt;&#x3D;1e9   &#x3D;&gt;   O(sqrt(N) )</td>
+<td>判断素数</td>
+</tr>
+<tr>
+<td>N&lt;&#x3D;1e18   &#x3D;&gt;   O(logN)</td>
+<td>最大公约数   快速幂   二分</td>
+</tr>
+<tr>
+<td>N&lt;&#x3D;1e1000    &#x3D;&gt;   O(k)</td>
+<td>高精度加减乘除</td>
+</tr>
+</tbody></table>
+<h2 id="2021C-A组"><a href="#2021C-A组" class="headerlink" title="2021C++A组"></a>2021C++A组</h2><h3 id="T8-左孩子右兄弟"><a href="#T8-左孩子右兄弟" class="headerlink" title="T8   左孩子右兄弟"></a>T8   左孩子右兄弟</h3><p>树形 dp + dfs    太经典了！</p>
 <p>基本思路就是递归找每个子节点的dp值</p>
 <p>dp值为当前节点的兄弟数+子树的树高   维护最大值</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// http://lx.lanqiao.cn/problem.page?gpid=T2898</span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="keyword">typedef</span> <span class="type">long</span> <span class="type">long</span> ll;</span><br><span class="line"><span class="keyword">typedef</span> pair&lt;<span class="type">int</span>, <span class="type">int</span>&gt; pii;</span><br><span class="line"><span class="type">const</span> <span class="type">int</span> INF = <span class="number">0x7fffffff</span>;</span><br><span class="line"><span class="type">const</span> <span class="type">int</span> N = <span class="number">1e5</span> + <span class="number">5</span>;</span><br><span class="line"><span class="type">const</span> <span class="type">int</span> mod = <span class="number">1e9</span> + <span class="number">7</span>;</span><br><span class="line"></span><br><span class="line">vector&lt;<span class="type">int</span>&gt; G[N];</span><br><span class="line"><span class="type">int</span> dp[N];</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">dfs</span><span class="params">(<span class="type">int</span> u)</span> </span>&#123;</span><br><span class="line">  dp[u] = G[u].<span class="built_in">size</span>();</span><br><span class="line">  <span class="type">int</span> mx = <span class="number">0</span>;</span><br><span class="line">  <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; G[u].<span class="built_in">size</span>(); i++) &#123;</span><br><span class="line">    <span class="type">int</span> v = G[u][i];</span><br><span class="line">    <span class="built_in">dfs</span>(v);</span><br><span class="line">    mx = <span class="built_in">max</span>(mx, dp[v]);</span><br><span class="line">  &#125;</span><br><span class="line">  dp[u] += mx;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">  <span class="type">int</span> n;</span><br><span class="line">  cin &gt;&gt; n;</span><br><span class="line">  <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">2</span>; i &lt;= n; i++) &#123;</span><br><span class="line">    <span class="type">int</span> x;</span><br><span class="line">    cin &gt;&gt; x;</span><br><span class="line">    G[x].<span class="built_in">push_back</span>(i);</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="built_in">dfs</span>(<span class="number">1</span>);</span><br><span class="line">  cout &lt;&lt; dp[<span class="number">1</span>] &lt;&lt; endl;</span><br><span class="line">  <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -963,13 +1019,13 @@
       <i class="fa fa-chart-area"></i>
     </span>
       <span class="post-meta-item-text">站点总字数：</span>
-    <span title="站点总字数">8k</span>
+    <span title="站点总字数">9k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">7 分钟</span>
+    <span title="站点阅读时长">8 分钟</span>
 </div>
 
         
