@@ -273,7 +273,7 @@
               <span class="post-meta-item-text">发表于</span>
               
 
-              <time title="创建时间：2023-09-20 21:05:38 / 修改时间：21:28:24" itemprop="dateCreated datePublished" datetime="2023-09-20T21:05:38+08:00">2023-09-20</time>
+              <time title="创建时间：2023-09-20 21:05:38 / 修改时间：22:47:17" itemprop="dateCreated datePublished" datetime="2023-09-20T21:05:38+08:00">2023-09-20</time>
             </span>
 
           <br>
@@ -282,7 +282,7 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>6.6k</span>
+              <span>7.1k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -429,7 +429,20 @@
 
 
 
-<h3 id="读写npy"><a href="#读写npy" class="headerlink" title="读写npy"></a>读写npy</h3><h3 id="读写xlsx-x2F-xls"><a href="#读写xlsx-x2F-xls" class="headerlink" title="读写xlsx&#x2F;xls"></a>读写xlsx&#x2F;xls</h3><h3 id="读写json"><a href="#读写json" class="headerlink" title="读写json"></a>读写json</h3><ul>
+<h3 id="读写npy"><a href="#读写npy" class="headerlink" title="读写npy"></a>读写npy</h3><p>在使用numpy科学计算时，我们想保存一些矩阵和数组数据。但维度较大，有三维，四维甚至五维。此时上述方法对数据的读写就很麻烦。numpy提供了较方便保存数组和矩阵的函数.</p>
+<ul>
+<li>使用save和load函数保存和加载数组</li>
+</ul>
+<figure class="highlight maxima"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">import numpy as <span class="built_in">np</span></span><br><span class="line">x = <span class="built_in">np</span>.<span class="built_in">array</span>([<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>])</span><br><span class="line"><span class="built_in">np</span>.<span class="built_in">save</span>(&#x27;<span class="built_in">save</span>&#x27;,x)</span><br><span class="line">x = <span class="built_in">np</span>.<span class="built_in">load</span>(&#x27;<span class="built_in">save</span>.npy&#x27;)</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>文本格式读写<br>numpy还提供了文本保存格式函数savetxt，不同于二进制格式，文本文件可以直接打开查看内容<br>但是savetxt方法无法保存三维及以上的数组。此时可以对数组先降维，加载后再升维。</li>
+</ul>
+<figure class="highlight maxima"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">import numpy as <span class="built_in">np</span></span><br><span class="line">x = <span class="built_in">np</span>.ones([<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>])    #四维数组无法直接保存为txt文件</span><br><span class="line">y = x.<span class="built_in">flatten</span>()</span><br><span class="line"><span class="built_in">np</span>.savetxt(&#x27;<span class="built_in">save</span>.txt&#x27;)  </span><br><span class="line"></span><br><span class="line">r = <span class="built_in">np</span>.<span class="built_in">load</span>(&#x27;<span class="built_in">save</span>.txt&#x27;)</span><br><span class="line">x = <span class="built_in">np</span>.reshape(r,(<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>))</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="读写xlsx-x2F-xls"><a href="#读写xlsx-x2F-xls" class="headerlink" title="读写xlsx&#x2F;xls"></a>读写xlsx&#x2F;xls</h3><h3 id="读写json"><a href="#读写json" class="headerlink" title="读写json"></a>读写json</h3><ul>
 <li><code>dump</code> - 将Python对象按照JSON格式序列化到文件中</li>
 <li><code>dumps</code> - 将Python对象处理成JSON格式的字符串</li>
 <li><code>load</code> - 将文件中的JSON数据反序列化成对象</li>
@@ -1310,13 +1323,13 @@
       <i class="fa fa-chart-area"></i>
     </span>
       <span class="post-meta-item-text">站点总字数：</span>
-    <span title="站点总字数">65k</span>
+    <span title="站点总字数">66k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">59 分钟</span>
+    <span title="站点阅读时长">1:01</span>
 </div>
 
         
