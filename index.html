@@ -271,10 +271,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              
 
-              <time title="创建时间：2023-09-20 21:05:38 / 修改时间：22:54:57" itemprop="dateCreated datePublished" datetime="2023-09-20T21:05:38+08:00">2023-09-20</time>
+              <time title="创建时间：2023-09-20 21:05:38" itemprop="dateCreated datePublished" datetime="2023-09-20T21:05:38+08:00">2023-09-20</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2023-09-22 14:30:52" itemprop="dateModified" datetime="2023-09-22T14:30:52+08:00">2023-09-22</time>
+              </span>
 
           <br>
             <span class="post-meta-item" title="本文字数">
@@ -302,171 +308,14 @@
 
       
           <h1 id="Python常用语法"><a href="#Python常用语法" class="headerlink" title="Python常用语法"></a>Python常用语法</h1><h2 id="基础"><a href="#基础" class="headerlink" title="基础"></a>基础</h2><h3 id="安装包"><a href="#安装包" class="headerlink" title="安装包"></a>安装包</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">以下载numpy为例</span></span><br><span class="line">pip install numpy -i http://mirrors.aliyun.com/pypi/simple/</span><br><span class="line">pip3 install torch==2.0.0+cu118 -i http://mirrors.aliyun.com/pypi/simple/</span><br></pre></td></tr></table></figure>
-
-<p>默认使pip官方的下载链接，在国外，一般使用国内的镜像网址：</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">https://pypi.tuna.tsinghua.edu.cn/simple/</span><br><span class="line">http://mirrors.aliyun.com/pypi/simple/</span><br><span class="line">http://pypi.douban.com/simple/</span><br><span class="line">https://pypi.mirrors.ustc.edu.cn/simple/</span><br></pre></td></tr></table></figure>
-
-<p>pip 永久换源</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip config set global.index-url https://mirrors.aliyun.com/pypi/simple/</span><br></pre></td></tr></table></figure>
-
-<h3 id="输入输出"><a href="#输入输出" class="headerlink" title="输入输出"></a>输入输出</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 格式化输出</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">print</span>(<span class="string">&quot;The length of %s is %d&quot;</span> % (s,x))  </span><br><span class="line">The length of Hello <span class="keyword">is</span> <span class="number">5</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">print</span>(<span class="string">&quot;The length of &#123;&#125; is &#123;&#125;&quot;</span>.<span class="built_in">format</span>(s, x))  </span><br><span class="line">The length of Hello <span class="keyword">is</span> <span class="number">5</span></span><br></pre></td></tr></table></figure>
-
-<p>类型转换</p>
-<table>
-<thead>
-<tr>
-<th>转换</th>
-<th>转换前</th>
-<th>后</th>
-</tr>
-</thead>
-<tbody><tr>
-<td><strong>十转二</strong></td>
-<td>bin(10)</td>
-<td>‘0b1010’</td>
-</tr>
-<tr>
-<td><strong>十转八</strong></td>
-<td>oct(9)</td>
-<td>‘0o11’</td>
-</tr>
-<tr>
-<td><strong>十转十六</strong></td>
-<td>hex(15)</td>
-<td>‘0xf’</td>
-</tr>
-<tr>
-<td><strong>转为字符串</strong></td>
-<td>i &#x3D; 100 <br />str(i)</td>
-<td>‘100’</td>
-</tr>
-<tr>
-<td><strong>十转ASCII</strong></td>
-<td>chr(65)</td>
-<td>‘A’</td>
-</tr>
-<tr>
-<td><strong>ASCII转十</strong></td>
-<td>ord(‘A’)</td>
-<td>65</td>
-</tr>
-</tbody></table>
-<p>生成随机数</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> random</span><br><span class="line">rnd = random.randint(<span class="number">1</span>,<span class="number">500</span>)   <span class="comment">#生成1-500之间的随机数</span></span><br></pre></td></tr></table></figure>
-
-<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 不换行输出</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;*&#x27;</span>, end=<span class="string">&#x27;&#x27;</span>)</span><br></pre></td></tr></table></figure>
-
-<h3 id="string"><a href="#string" class="headerlink" title="string"></a>string</h3><figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line">str1 = <span class="string">&#x27;hello, world!&#x27;</span></span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">len</span>(str1))  <span class="comment"># 计算字符串的长度  13</span></span><br><span class="line"><span class="built_in">print</span>(str1.capitalize())  <span class="comment"># 获得字符串首字母大写的拷贝   &#x27;Hello, world!&#x27;</span></span><br><span class="line"><span class="built_in">print</span>(str1.upper())  <span class="comment"># 获得字符串变大写后的拷贝  &#x27;HELLO, WORLD!&#x27;</span></span><br><span class="line"><span class="built_in">print</span>(str1.find(<span class="string">&#x27;or&#x27;</span>))  <span class="comment"># 从字符串中查找子串所在位置   8</span></span><br><span class="line"><span class="built_in">print</span>(str1.find(<span class="string">&#x27;shit&#x27;</span>))  <span class="comment"># -1</span></span><br><span class="line"><span class="comment"># 与find类似但找不到子串时会引发异常</span></span><br><span class="line"><span class="comment"># print(str1.index(&#x27;or&#x27;))</span></span><br><span class="line"><span class="comment"># print(str1.index(&#x27;shit&#x27;))</span></span><br><span class="line"><span class="comment"># 检查字符串是否以指定的字符串开头</span></span><br><span class="line"><span class="built_in">print</span>(str1.startswith(<span class="string">&#x27;He&#x27;</span>))  <span class="comment"># False</span></span><br><span class="line"><span class="built_in">print</span>(str1.startswith(<span class="string">&#x27;hel&#x27;</span>))  <span class="comment"># True</span></span><br><span class="line"><span class="comment"># 检查字符串是否以指定的字符串结尾</span></span><br><span class="line"><span class="built_in">print</span>(str1.endswith(<span class="string">&#x27;!&#x27;</span>))  <span class="comment"># True</span></span><br><span class="line"><span class="comment"># 将字符串以指定的宽度居中并在两侧填充指定的字符</span></span><br><span class="line"><span class="built_in">print</span>(str1.center(<span class="number">50</span>, <span class="string">&#x27;*&#x27;</span>))</span><br><span class="line"><span class="comment"># 将字符串以指定的宽度靠右放置左侧填充指定的字符</span></span><br><span class="line"><span class="built_in">print</span>(str1.rjust(<span class="number">50</span>, <span class="string">&#x27; &#x27;</span>))</span><br><span class="line"></span><br><span class="line">str2 = <span class="string">&#x27;abc123456&#x27;</span></span><br><span class="line"><span class="comment"># 从字符串中取出指定位置的字符(下标运算)</span></span><br><span class="line"><span class="built_in">print</span>(str2[<span class="number">2</span>])  <span class="comment"># c</span></span><br><span class="line"><span class="comment"># 字符串切片(从指定的开始索引到指定的结束索引)</span></span><br><span class="line"><span class="built_in">print</span>(str2[<span class="number">2</span>:<span class="number">5</span>])  <span class="comment"># c12</span></span><br><span class="line"><span class="built_in">print</span>(str2[<span class="number">2</span>:])  <span class="comment"># c123456</span></span><br><span class="line"><span class="built_in">print</span>(str2[<span class="number">2</span>::<span class="number">2</span>])  <span class="comment"># c246</span></span><br><span class="line"><span class="built_in">print</span>(str2[::<span class="number">2</span>])  <span class="comment"># ac246</span></span><br><span class="line"><span class="built_in">print</span>(str2[::-<span class="number">1</span>])  <span class="comment"># 654321cba</span></span><br><span class="line"><span class="built_in">print</span>(str2[-<span class="number">3</span>:-<span class="number">1</span>])  <span class="comment"># 45</span></span><br><span class="line"><span class="comment"># 检查字符串是否由数字构成</span></span><br><span class="line"><span class="built_in">print</span>(str2.isdigit())  <span class="comment"># False</span></span><br><span class="line"><span class="comment"># 检查字符串是否以字母构成</span></span><br><span class="line"><span class="built_in">print</span>(str2.isalpha())  <span class="comment"># False</span></span><br><span class="line"><span class="comment"># 检查字符串是否以数字和字母构成</span></span><br><span class="line"><span class="built_in">print</span>(str2.isalnum())  <span class="comment"># True</span></span><br><span class="line">str3 = <span class="string">&#x27;  jackfrued@126.com &#x27;</span></span><br><span class="line"><span class="built_in">print</span>(str3.strip())  <span class="comment"># 获得字符串修剪左右两侧空格的拷贝  &#x27;jackfrued@126.com&#x27;</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="list"><a href="#list" class="headerlink" title="list"></a>list</h3><figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">list1 = [<span class="number">1</span>, <span class="number">3</span>, <span class="number">5</span>, <span class="number">7</span>, <span class="number">100</span>]</span><br><span class="line">list2 = [<span class="string">&#x27;hello&#x27;</span>] * <span class="number">5</span></span><br><span class="line"><span class="comment"># 计算列表长度(元素个数)</span></span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">len</span>(list1))</span><br><span class="line"><span class="comment"># 下标(索引)运算</span></span><br><span class="line"><span class="built_in">print</span>(list1[<span class="number">0</span>])</span><br><span class="line"><span class="built_in">print</span>(list1[<span class="number">4</span>])</span><br><span class="line"><span class="comment"># print(list1[5])  # IndexError: list index out of range</span></span><br><span class="line"><span class="built_in">print</span>(list1[-<span class="number">1</span>])</span><br><span class="line"><span class="built_in">print</span>(list1[-<span class="number">3</span>])</span><br><span class="line">list1[<span class="number">2</span>] = <span class="number">300</span></span><br><span class="line"><span class="built_in">print</span>(list1)</span><br><span class="line"><span class="comment"># 添加元素</span></span><br><span class="line">list1.append(<span class="number">200</span>)</span><br><span class="line">list1.insert(<span class="number">1</span>, <span class="number">400</span>)</span><br><span class="line">list1 += [<span class="number">1000</span>, <span class="number">2000</span>]</span><br><span class="line"><span class="built_in">print</span>(list1)</span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">len</span>(list1))</span><br><span class="line"><span class="comment"># 删除元素</span></span><br><span class="line">list1.remove(<span class="number">3</span>)</span><br><span class="line"><span class="keyword">if</span> <span class="number">1234</span> <span class="keyword">in</span> list1:</span><br><span class="line">    list1.remove(<span class="number">1234</span>)</span><br><span class="line"><span class="keyword">del</span> list1[<span class="number">0</span>]</span><br><span class="line"><span class="built_in">print</span>(list1)</span><br><span class="line"><span class="comment"># 清空列表元素</span></span><br><span class="line">list1.clear()</span><br><span class="line"><span class="built_in">print</span>(list1)</span><br></pre></td></tr></table></figure>
-
-<p>列表的生成式语法</p>
-<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> sys</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">main</span>():</span><br><span class="line">    f = [x <span class="keyword">for</span> x <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1</span>, <span class="number">10</span>)]</span><br><span class="line">    <span class="built_in">print</span>(f)</span><br><span class="line">    f = [x + y <span class="keyword">for</span> x <span class="keyword">in</span> <span class="string">&#x27;ABCDE&#x27;</span> <span class="keyword">for</span> y <span class="keyword">in</span> <span class="string">&#x27;1234567&#x27;</span>]</span><br><span class="line">    <span class="built_in">print</span>(f)</span><br><span class="line">    <span class="comment"># 用列表的生成表达式语法创建列表容器</span></span><br><span class="line">    <span class="comment"># 用这种语法创建列表之后元素已经准备就绪所以需要耗费较多的内存空间</span></span><br><span class="line">    f = [x ** <span class="number">2</span> <span class="keyword">for</span> x <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1</span>, <span class="number">1000</span>)]</span><br><span class="line">    <span class="built_in">print</span>(sys.getsizeof(f))  <span class="comment"># 查看对象占用内存的字节数</span></span><br><span class="line">    <span class="built_in">print</span>(f)</span><br><span class="line">    <span class="comment"># 请注意下面的代码创建的不是一个列表而是一个生成器对象</span></span><br><span class="line">    <span class="comment"># 通过生成器可以获取到数据但它不占用额外的空间存储数据</span></span><br><span class="line">    <span class="comment"># 每次需要数据的时候就通过内部的运算得到数据(需要花费额外的时间)</span></span><br><span class="line">    f = (x ** <span class="number">2</span> <span class="keyword">for</span> x <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1</span>, <span class="number">1000</span>))</span><br><span class="line">    <span class="built_in">print</span>(sys.getsizeof(f))  <span class="comment"># 相比生成式生成器不占用存储数据的空间</span></span><br><span class="line">    <span class="built_in">print</span>(f)</span><br><span class="line">    <span class="keyword">for</span> val <span class="keyword">in</span> f:</span><br><span class="line">        <span class="built_in">print</span>(val)</span><br></pre></td></tr></table></figure>
-
-<h3 id="tuple"><a href="#tuple" class="headerlink" title="tuple"></a>tuple</h3><p>类似cpp中结构体</p>
-<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">main</span>():</span><br><span class="line">    <span class="comment"># 定义元组</span></span><br><span class="line">    t = (<span class="string">&#x27;骆昊&#x27;</span>, <span class="number">38</span>, <span class="literal">True</span>, <span class="string">&#x27;四川成都&#x27;</span>)</span><br><span class="line">    <span class="built_in">print</span>(t)</span><br><span class="line">    <span class="comment"># 获取元组中的元素</span></span><br><span class="line">    <span class="built_in">print</span>(t[<span class="number">0</span>])</span><br><span class="line">    <span class="built_in">print</span>(t[<span class="number">3</span>])</span><br><span class="line">    <span class="comment"># 遍历元组中的值</span></span><br><span class="line">    <span class="keyword">for</span> member <span class="keyword">in</span> t:</span><br><span class="line">        <span class="built_in">print</span>(member)</span><br><span class="line">    <span class="comment"># 重新给元组赋值</span></span><br><span class="line">    <span class="comment"># t[0] = &#x27;王大锤&#x27;  # TypeError</span></span><br><span class="line">    <span class="comment"># 变量t重新引用了新的元组原来的元组将被垃圾回收</span></span><br><span class="line">    t = (<span class="string">&#x27;王大锤&#x27;</span>, <span class="number">20</span>, <span class="literal">True</span>, <span class="string">&#x27;云南昆明&#x27;</span>)</span><br><span class="line">    <span class="built_in">print</span>(t)</span><br><span class="line">    <span class="comment"># 将元组转换成列表</span></span><br><span class="line">    person = <span class="built_in">list</span>(t)</span><br><span class="line">    <span class="built_in">print</span>(person)</span><br><span class="line">    <span class="comment"># 列表是可以修改它的元素的</span></span><br><span class="line">    person[<span class="number">0</span>] = <span class="string">&#x27;李小龙&#x27;</span></span><br><span class="line">    person[<span class="number">1</span>] = <span class="number">25</span></span><br><span class="line">    <span class="built_in">print</span>(person)</span><br><span class="line">    <span class="comment"># 将列表转换成元组</span></span><br><span class="line">    fruits_list = [<span class="string">&#x27;apple&#x27;</span>, <span class="string">&#x27;banana&#x27;</span>, <span class="string">&#x27;orange&#x27;</span>]</span><br><span class="line">    fruits_tuple = <span class="built_in">tuple</span>(fruits_list)</span><br><span class="line">    <span class="built_in">print</span>(fruits_tuple)</span><br></pre></td></tr></table></figure>
-
-<h3 id="dict"><a href="#dict" class="headerlink" title="dict"></a>dict</h3><p>类似cpp中unordered_map</p>
-<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">main</span>():</span><br><span class="line">    scores = &#123;<span class="string">&#x27;骆昊&#x27;</span>: <span class="number">95</span>, <span class="string">&#x27;白元芳&#x27;</span>: <span class="number">78</span>, <span class="string">&#x27;狄仁杰&#x27;</span>: <span class="number">82</span>&#125;</span><br><span class="line">    <span class="comment"># 通过键可以获取字典中对应的值</span></span><br><span class="line">    <span class="built_in">print</span>(scores[<span class="string">&#x27;骆昊&#x27;</span>])</span><br><span class="line">    <span class="built_in">print</span>(scores[<span class="string">&#x27;狄仁杰&#x27;</span>])</span><br><span class="line">    <span class="comment"># 对字典进行遍历(遍历的其实是键再通过键取对应的值)</span></span><br><span class="line">    <span class="keyword">for</span> elem <span class="keyword">in</span> scores:</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&#x27;%s\t---&gt;\t%d&#x27;</span> % (elem, scores[elem]))</span><br><span class="line">    <span class="comment"># 更新字典中的元素</span></span><br><span class="line">    scores[<span class="string">&#x27;白元芳&#x27;</span>] = <span class="number">65</span></span><br><span class="line">    scores[<span class="string">&#x27;诸葛王朗&#x27;</span>] = <span class="number">71</span></span><br><span class="line">    scores.update(冷面=<span class="number">67</span>, 方启鹤=<span class="number">85</span>)</span><br><span class="line">    <span class="built_in">print</span>(scores)</span><br><span class="line">    <span class="keyword">if</span> <span class="string">&#x27;武则天&#x27;</span> <span class="keyword">in</span> scores:</span><br><span class="line">        <span class="built_in">print</span>(scores[<span class="string">&#x27;武则天&#x27;</span>])</span><br><span class="line">    <span class="built_in">print</span>(scores.get(<span class="string">&#x27;武则天&#x27;</span>))</span><br><span class="line">    <span class="comment"># get方法也是通过键获取对应的值但是可以设置默认值</span></span><br><span class="line">    <span class="built_in">print</span>(scores.get(<span class="string">&#x27;武则天&#x27;</span>, <span class="number">60</span>))</span><br><span class="line">    <span class="comment"># 删除字典中的元素</span></span><br><span class="line">    <span class="built_in">print</span>(scores.popitem())</span><br><span class="line">    <span class="built_in">print</span>(scores.popitem())</span><br><span class="line">    <span class="built_in">print</span>(scores.pop(<span class="string">&#x27;骆昊&#x27;</span>, <span class="number">100</span>))</span><br><span class="line">    <span class="comment"># 清空字典</span></span><br><span class="line">    scores.clear()</span><br><span class="line">    <span class="built_in">print</span>(scores)</span><br></pre></td></tr></table></figure>
-
-
-
-<h2 id="文件读写"><a href="#文件读写" class="headerlink" title="文件读写"></a>文件读写</h2><table>
-<thead>
-<tr>
-<th>操作模式</th>
-<th>具体含义</th>
-</tr>
-</thead>
-<tbody><tr>
-<td><code>&#39;r&#39;</code></td>
-<td>读取 （默认）</td>
-</tr>
-<tr>
-<td><code>&#39;w&#39;</code></td>
-<td>写入（会先截断之前的内容）</td>
-</tr>
-<tr>
-<td><code>&#39;x&#39;</code></td>
-<td>写入，如果文件已经存在会产生异常</td>
-</tr>
-<tr>
-<td><code>&#39;a&#39;</code></td>
-<td>追加，将内容写入到已有文件的末尾</td>
-</tr>
-<tr>
-<td><code>&#39;b&#39;</code></td>
-<td>二进制模式</td>
-</tr>
-<tr>
-<td><code>&#39;t&#39;</code></td>
-<td>文本模式（默认）</td>
-</tr>
-<tr>
-<td><code>&#39;+&#39;</code></td>
-<td>更新（既可以读又可以写）</td>
-</tr>
-</tbody></table>
-<h3 id="读写txt"><a href="#读写txt" class="headerlink" title="读写txt"></a>读写txt</h3><p>read()</p>
-<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">f = <span class="built_in">open</span>(<span class="string">&#x27;123.txt&#x27;</span>, <span class="string">&#x27;r&#x27;</span>, encoding=<span class="string">&#x27;utf-8&#x27;</span>)</span><br><span class="line"><span class="built_in">print</span>(f.read())</span><br><span class="line">f.close()</span><br></pre></td></tr></table></figure>
-
-<p>如果<code>open</code>函数指定的文件并不存在或者无法打开，那么将引发异常状况导致程序崩溃。</p>
-<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">main</span>():</span><br><span class="line">    f = <span class="literal">None</span></span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        f = <span class="built_in">open</span>(<span class="string">&#x27;123.txt&#x27;</span>, <span class="string">&#x27;r&#x27;</span>, encoding=<span class="string">&#x27;utf-8&#x27;</span>)</span><br><span class="line">        <span class="built_in">print</span>(f.read())</span><br><span class="line">    <span class="keyword">except</span> FileNotFoundError:</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&#x27;无法打开指定的文件!&#x27;</span>)</span><br><span class="line">    <span class="keyword">except</span> LookupError:</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&#x27;指定了未知的编码!&#x27;</span>)</span><br><span class="line">    <span class="keyword">except</span> UnicodeDecodeError:</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&#x27;读取文件时解码错误!&#x27;</span>)</span><br><span class="line">    <span class="keyword">finally</span>:</span><br><span class="line">        <span class="keyword">if</span> f:</span><br><span class="line">            f.close()</span><br></pre></td></tr></table></figure>
-
-<p>上面的案例使用finally语句来释放外部资源的操作；如果不愿意在<code>finally</code>代码块中关闭文件对象释放资源，也可以使用上下文语法，通过<code>with</code>关键字指定文件对象的上下文环境并在离开上下文环境时自动释放文件资源。</p>
-<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">main</span>():</span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        <span class="keyword">with</span> <span class="built_in">open</span>(<span class="string">&#x27;123.txt&#x27;</span>, <span class="string">&#x27;r&#x27;</span>, encoding=<span class="string">&#x27;utf-8&#x27;</span>) <span class="keyword">as</span> f:</span><br><span class="line">            <span class="built_in">print</span>(f.read())</span><br><span class="line">    <span class="keyword">except</span> FileNotFoundError:</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&#x27;无法打开指定的文件!&#x27;</span>)</span><br><span class="line">    <span class="keyword">except</span> LookupError:</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&#x27;指定了未知的编码!&#x27;</span>)</span><br><span class="line">    <span class="keyword">except</span> UnicodeDecodeError:</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&#x27;读取文件时解码错误!&#x27;</span>)</span><br></pre></td></tr></table></figure>
-
-<p>readline()</p>
-<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">with</span> <span class="built_in">open</span>(<span class="string">&#x27;123.txt&#x27;</span>, mode=<span class="string">&#x27;r&#x27;</span>) <span class="keyword">as</span> f:</span><br><span class="line">    <span class="keyword">for</span> line <span class="keyword">in</span> f:</span><br><span class="line">        <span class="built_in">print</span>(line, end=<span class="string">&#x27;&#x27;</span>)</span><br><span class="line">        time.sleep(<span class="number">0.5</span>)</span><br><span class="line">    <span class="built_in">print</span>()</span><br><span class="line"></span><br><span class="line"><span class="comment"># 读取文件按行读取到列表中</span></span><br><span class="line"><span class="keyword">with</span> <span class="built_in">open</span>(<span class="string">&#x27;致橡树.txt&#x27;</span>) <span class="keyword">as</span> f:</span><br><span class="line">    lines = f.readlines()</span><br><span class="line"><span class="built_in">print</span>(lines)</span><br></pre></td></tr></table></figure>
-
-
-
-
-
-<h3 id="读写csv"><a href="#读写csv" class="headerlink" title="读写csv"></a>读写csv</h3><figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> csv</span><br><span class="line"><span class="comment"># 读取csv文件</span></span><br><span class="line"><span class="keyword">with</span> <span class="built_in">open</span>(<span class="string">&quot;test.csv&quot;</span>, <span class="string">&quot;r&quot;</span>) <span class="keyword">as</span> f:</span><br><span class="line">	reader = csv.reader(f)</span><br><span class="line">	<span class="keyword">for</span> row <span class="keyword">in</span> reader:</span><br><span class="line">		<span class="built_in">print</span>(row)</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> csv</span><br><span class="line"></span><br><span class="line">row = [<span class="string">&#x27;7&#x27;</span>, <span class="string">&#x27;hanmeimei&#x27;</span>, <span class="string">&#x27;23&#x27;</span>, <span class="string">&#x27;81&#x27;</span>, <span class="string">&#x27;78&#x27;</span>, <span class="string">&#x27;78&#x27;</span>]</span><br><span class="line">out = <span class="built_in">open</span>(<span class="string">&quot;test.csv&quot;</span>, <span class="string">&quot;a&quot;</span>)</span><br><span class="line">csv_writer = csv.writer(out, dialect = <span class="string">&quot;excel&quot;</span>)</span><br><span class="line">csv_writer.writerow(row)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># 打开文件，指定写入模式</span></span><br><span class="line"><span class="keyword">with</span> <span class="built_in">open</span>(<span class="string">&#x27;data.csv&#x27;</span>, <span class="string">&#x27;w&#x27;</span>, newline=<span class="string">&#x27;&#x27;</span>) <span class="keyword">as</span> file:</span><br><span class="line">    <span class="comment"># 创建csv写入对象</span></span><br><span class="line">    writer = csv.writer(file)</span><br><span class="line">    <span class="comment"># 写入表头</span></span><br><span class="line">    writer.writerow([<span class="string">&#x27;姓名&#x27;</span>, <span class="string">&#x27;年龄&#x27;</span>, <span class="string">&#x27;性别&#x27;</span>])</span><br><span class="line">    <span class="comment"># 写入数据</span></span><br><span class="line">    writer.writerows(data)</span><br></pre></td></tr></table></figure>
-
-
-
-<h3 id="读写npy"><a href="#读写npy" class="headerlink" title="读写npy"></a>读写npy</h3><p>在使用numpy科学计算时，我们想保存一些矩阵和数组数据。但维度较大，有三维，四维甚至五维。此时上述方法对数据的读写就很麻烦。numpy提供了较方便保存数组和矩阵的函数.</p>
-<ul>
-<li>使用save和load函数保存和加载数组</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">x = np.array([<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>])</span><br><span class="line">np.save(<span class="string">&#x27;save&#x27;</span>,x)</span><br><span class="line">x = np.load(<span class="string">&#x27;save.npy&#x27;</span>)</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>文本格式读写<br>numpy还提供了文本保存格式函数savetxt，不同于二进制格式，文本文件可以直接打开查看内容<br>但是savetxt方法无法保存三维及以上的数组。此时可以对数组先降维，加载后再升维。</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">x = np.ones([<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>])    <span class="comment">#四维数组无法直接保存为txt文件</span></span><br><span class="line">y = x.flatten()</span><br><span class="line">np.savetxt(<span class="string">&#x27;save.txt&#x27;</span>)  </span><br><span class="line"></span><br><span class="line">r = np.load(<span class="string">&#x27;save.txt&#x27;</span>)</span><br><span class="line">x = np.reshape(r,(<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>))</span><br></pre></td></tr></table></figure>
-
-
-
-<h3 id="读写xlsx-x2F-xls"><a href="#读写xlsx-x2F-xls" class="headerlink" title="读写xlsx&#x2F;xls"></a>读写xlsx&#x2F;xls</h3><ul>
-<li><p>xlrd &amp; xlwt</p>
-</li>
-<li><p>openpyxl</p>
-</li>
-</ul>
-<h3 id="读写json"><a href="#读写json" class="headerlink" title="读写json"></a>读写json</h3><ul>
-<li><code>dump</code> - 将Python对象按照JSON格式序列化到文件中</li>
-<li><code>dumps</code> - 将Python对象处理成JSON格式的字符串</li>
-<li><code>load</code> - 将文件中的JSON数据反序列化成对象</li>
-<li><code>loads</code> - 将字符串的内容反序列化成Python对象</li>
-</ul>
-<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> json</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">main</span>():</span><br><span class="line">    mydict = &#123;</span><br><span class="line">        <span class="string">&#x27;name&#x27;</span>: <span class="string">&#x27;骆昊&#x27;</span>,</span><br><span class="line">        <span class="string">&#x27;age&#x27;</span>: <span class="number">38</span>,</span><br><span class="line">        <span class="string">&#x27;qq&#x27;</span>: <span class="number">957658</span>,</span><br><span class="line">        <span class="string">&#x27;friends&#x27;</span>: [<span class="string">&#x27;王大锤&#x27;</span>, <span class="string">&#x27;白元芳&#x27;</span>],</span><br><span class="line">        <span class="string">&#x27;cars&#x27;</span>: [</span><br><span class="line">            &#123;<span class="string">&#x27;brand&#x27;</span>: <span class="string">&#x27;BYD&#x27;</span>, <span class="string">&#x27;max_speed&#x27;</span>: <span class="number">180</span>&#125;,</span><br><span class="line">            &#123;<span class="string">&#x27;brand&#x27;</span>: <span class="string">&#x27;Audi&#x27;</span>, <span class="string">&#x27;max_speed&#x27;</span>: <span class="number">280</span>&#125;,</span><br><span class="line">            &#123;<span class="string">&#x27;brand&#x27;</span>: <span class="string">&#x27;Benz&#x27;</span>, <span class="string">&#x27;max_speed&#x27;</span>: <span class="number">320</span>&#125;</span><br><span class="line">        ]</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        <span class="keyword">with</span> <span class="built_in">open</span>(<span class="string">&#x27;data.json&#x27;</span>, <span class="string">&#x27;w&#x27;</span>, encoding=<span class="string">&#x27;utf-8&#x27;</span>) <span class="keyword">as</span> fs:</span><br><span class="line">            json.dump(mydict, fs)</span><br><span class="line">    <span class="keyword">except</span> IOError <span class="keyword">as</span> e:</span><br><span class="line">        <span class="built_in">print</span>(e)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&#x27;保存数据完成!&#x27;</span>)</span><br></pre></td></tr></table></figure>
-
-
-
-
-
-
-
-
-
-
-
-
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2023/09/20/python-grammar/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -661,10 +510,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              
 
-              <time title="创建时间：2023-07-30 20:26:21 / 修改时间：20:48:39" itemprop="dateCreated datePublished" datetime="2023-07-30T20:26:21+08:00">2023-07-30</time>
+              <time title="创建时间：2023-07-30 20:26:21" itemprop="dateCreated datePublished" datetime="2023-07-30T20:26:21+08:00">2023-07-30</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2023-09-22 14:30:38" itemprop="dateModified" datetime="2023-09-22T14:30:38+08:00">2023-09-22</time>
+              </span>
 
           <br>
             <span class="post-meta-item" title="本文字数">
@@ -693,32 +548,16 @@
       
           <h1 id="关于个人博客的搭建"><a href="#关于个人博客的搭建" class="headerlink" title="关于个人博客的搭建"></a>关于个人博客的搭建</h1><p>最近换了新电脑，但是博客系统一直是在旧电脑上搭建的，索性写个文档记录一下搭建过程（万一下次又换电脑了呢hhhh…</p>
 <h2 id="安装git"><a href="#安装git" class="headerlink" title="安装git"></a>安装git</h2><ol>
-<li><p>打开git的<a target="_blank" rel="noopener" href="https://git-scm.com/download/win">官网</a>，下载git</p>
-</li>
-<li><p>配置本地git</p>
-<p>首先设置姓名和邮箱（和github账号保持一致）</p>
-<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git config <span class="attr">--global</span> user<span class="selector-class">.name</span> <span class="string">&quot;yourname&quot;</span></span><br><span class="line">git config <span class="attr">--global</span> user<span class="selector-class">.email</span> <span class="string">&quot;youremail@email.com&quot;</span></span><br><span class="line">git config <span class="attr">--global</span> <span class="attr">--list</span></span><br></pre></td></tr></table></figure>
-
-<p>配置环境变量：将本地git下的bin目录复制到Path环境变量中，并使其生效。</p>
-<p>然后生成密钥</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> ~/.ssh</span><br><span class="line">ssh-keygen -t rsa</span><br></pre></td></tr></table></figure>
-
-<p>连续回车之后可以在<code>~/.ssh</code> 下面生成<code>id_rsa.pub</code> 文件，在github中添加一个新的ssh密钥。</p>
-</li>
-<li><p>测试git</p>
-<figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">ssh</span> -T git<span class="variable">@github</span>.com</span><br></pre></td></tr></table></figure>
-
-<p>配置成功会出现如下：</p>
-<figure class="highlight vbnet"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">PS C:\Users\czyhh&gt; ssh -T git@github.com</span><br><span class="line">The authenticity <span class="keyword">of</span> host <span class="comment">&#x27;github.com (20.205.243.166)&#x27; can&#x27;t be established.</span></span><br><span class="line">ED25519 <span class="keyword">key</span> fingerprint <span class="built_in">is</span> SHA256:+&lt;something&gt;.</span><br><span class="line">This <span class="keyword">key</span> <span class="built_in">is</span> <span class="built_in">not</span> known <span class="keyword">by</span> any other names</span><br><span class="line">Are you sure you want <span class="keyword">to</span> <span class="keyword">continue</span> connecting (yes/no/[fingerprint])? yes</span><br><span class="line"><span class="symbol">Warning:</span> Permanently added <span class="comment">&#x27;github.com&#x27; (ED25519) to the list of known hosts.</span></span><br><span class="line">Hi Yourname! You<span class="comment">&#x27;ve successfully authenticated, but GitHub does not provide shell access.</span></span><br></pre></td></tr></table></figure></li>
+<li>打开git的<a target="_blank" rel="noopener" href="https://git-scm.com/download/win">官网</a>，下载git</li>
 </ol>
-<h2 id="安装Node-js"><a href="#安装Node-js" class="headerlink" title="安装Node.js"></a>安装Node.js</h2><p> <a target="_blank" rel="noopener" href="http://nodejs.cn/download/">nodejs官网</a>.</p>
-<h2 id="安装hexo"><a href="#安装hexo" class="headerlink" title="安装hexo"></a>安装hexo</h2><figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">npm <span class="keyword">install</span></span><br><span class="line">npm <span class="keyword">install</span> -g hexo-cli</span><br><span class="line">hexo -v</span><br></pre></td></tr></table></figure>
-
-<h2 id="相关命令"><a href="#相关命令" class="headerlink" title="相关命令"></a>相关命令</h2><figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">hexo <span class="keyword">init</span>  初始化博客项目</span><br><span class="line">hexo clean  清理hexo缓存</span><br><span class="line">hexo s     启动本地站点</span><br><span class="line">hexo d     部署到云服务器</span><br><span class="line">hexo g     生成更新之后的项目文件</span><br></pre></td></tr></table></figure>
-
-<p>一般先<code>hexo clean </code> 清理缓存，然后<code>hexo d -g</code>  生成博客文件，并上传到服务器</p>
-<p>博客链接：<a href="https://joserii.github.io/">https://joserii.github.io/</a></p>
-
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2023/07/30/%E5%85%B3%E4%BA%8E%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E7%9A%84%E6%90%AD%E5%BB%BA/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
