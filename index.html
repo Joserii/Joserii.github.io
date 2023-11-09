@@ -123,7 +123,7 @@
   </li>
         <li class="menu-item menu-item-tags">
 
-    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">12</span></a>
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">13</span></a>
 
   </li>
         <li class="menu-item menu-item-archives">
@@ -157,96 +157,6 @@
 
           <div class="content index posts-expand">
             
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://joserii.github.io/2023/11/09/%E5%A6%82%E4%BD%95%E7%A8%B3%E5%AE%9A%E5%9C%B0%E4%B8%8B%E8%BD%BDHuggingface%E4%B8%8A%E7%9A%84%E5%A4%A7%E6%A8%A1%E5%9E%8B%EF%BC%9F/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/author.jpg">
-      <meta itemprop="name" content="Joseri Chen">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Joseri的小站">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2023/11/09/%E5%A6%82%E4%BD%95%E7%A8%B3%E5%AE%9A%E5%9C%B0%E4%B8%8B%E8%BD%BDHuggingface%E4%B8%8A%E7%9A%84%E5%A4%A7%E6%A8%A1%E5%9E%8B%EF%BC%9F/" class="post-title-link" itemprop="url">未命名</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2023-11-09 12:13:36" itemprop="dateCreated datePublished" datetime="2023-11-09T12:13:36+08:00">2023-11-09</time>
-            </span>
-
-          <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>721</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>1 分钟</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="如何稳定地下载Huggingface上的大模型？"><a href="#如何稳定地下载Huggingface上的大模型？" class="headerlink" title="如何稳定地下载Huggingface上的大模型？"></a>如何稳定地下载Huggingface上的大模型？</h1><p>在大语言模型的应用程序中，一般直接在huggingface.co上下载预训练模型，并在程序中装载，但是下载速度慢，容易断线，需要反复重试。本文介绍几种方法，用来优雅从容地下载模型文件。</p>
-<h2 id="方法一：官网"><a href="#方法一：官网" class="headerlink" title="方法一：官网"></a>方法一：官网</h2><p>方法：从<a href="https://link.zhihu.com/?target=http://huggingface.co">http://huggingface.co</a>找到大语言模型，逐个文件下载</p>
-<p>优点：容易操作，简单方便</p>
-<p>缺点：网络不稳定，需要多次手动尝试，耗时耗精力</p>
-<p><img src="C:/Users/Administrator/AppData/Roaming/Typora/typora-user-images/image-20231105153455463.png" alt="image-20231105153455463"></p>
-<h2 id="方法二：git-clone"><a href="#方法二：git-clone" class="headerlink" title="方法二：git clone"></a>方法二：git clone</h2><p>方法：git clone <a target="_blank" rel="noopener" href="https://huggingface.co/%E6%A8%A1%E5%9E%8BID">https://huggingface.co/模型ID</a></p>
-<p>优点：用访问代码库的方法，对于开发人员来说比较简单</p>
-<p>缺点：需要lfs支持，网络不稳定</p>
-<h3 id="https版"><a href="#https版" class="headerlink" title="https版"></a>https版</h3><figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git lfs install</span><br><span class="line">git clone https:<span class="regexp">//</span>huggingface.co<span class="regexp">/PharMolix/</span>BioMedGPT-<span class="number">10</span>B</span><br></pre></td></tr></table></figure>
-
-<h3 id="ssh版"><a href="#ssh版" class="headerlink" title="ssh版"></a>ssh版</h3><figure class="highlight crmsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git lfs install</span><br><span class="line">git <span class="keyword">clone</span> <span class="title">git</span>@hf.co:PharMolix/BioMedGPT-<span class="number">10</span>B</span><br></pre></td></tr></table></figure>
-
-<h2 id="方法三：镜像"><a href="#方法三：镜像" class="headerlink" title="方法三：镜像"></a>方法三：镜像</h2><p>方法：由于huggingface采用了全球大量的cdn站点分担下载压力，所以下载的链接域名不是固定的，传统的代理、转发等不易实现，但可以采用 <a href="https://link.zhihu.com/?target=https://aliendao.cn/">https://aliendao.cn/</a> 这样的静态镜像网站下载。</p>
-<p>优点：直接下载，简单直接，不会中途断线</p>
-<p>缺点：<a href="https://link.zhihu.com/?target=https://aliendao.cn/">https://aliendao.cn/</a> 上的模型还不是很全，不能覆盖到所有模型。</p>
-<h3 id="推荐镜像"><a href="#推荐镜像" class="headerlink" title="推荐镜像"></a>推荐镜像</h3><p>互联高科：<a target="_blank" rel="noopener" href="https://aliendao.cn/#/">https://aliendao.cn/#/</a></p>
-<p>ai快站：<a target="_blank" rel="noopener" href="https://aifasthub.com/">https://aifasthub.com/</a></p>
-<p>modelscope：<a target="_blank" rel="noopener" href="https://modelscope.cn/models">https://modelscope.cn/models</a></p>
-<p>hf-mirror：<a target="_blank" rel="noopener" href="https://hf-mirror.com/">https://hf-mirror.com/</a></p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
       
   
   
@@ -1206,6 +1116,105 @@
   
   
 
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://joserii.github.io/2023/01/20/King-of-Bots/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/author.jpg">
+      <meta itemprop="name" content="Joseri Chen">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Joseri的小站">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2023/01/20/King-of-Bots/" class="post-title-link" itemprop="url">King of Bots 项目开发</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2023-01-20 16:01:40" itemprop="dateCreated datePublished" datetime="2023-01-20T16:01:40+08:00">2023-01-20</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2023-02-13 16:30:48" itemprop="dateModified" datetime="2023-02-13T16:30:48+08:00">2023-02-13</time>
+              </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>3.1k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>3 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="King-of-Bots-项目开发"><a href="#King-of-Bots-项目开发" class="headerlink" title="King of Bots 项目开发"></a>King of Bots 项目开发</h1><h2 id="项目构思"><a href="#项目构思" class="headerlink" title="项目构思"></a>项目构思</h2><ul>
+<li><p>PK 界面：匹配界面（微服务）&#x2F; 对战实况（<code>websocket</code>）&#x2F; 真人PK（<code>websocket</code>）</p>
+</li>
+<li><p>对战列表：录像回放</p>
+</li>
+<li><p>排行榜：<code>Bot</code> 列表   </p>
+</li>
+<li><p>用户中心（注册登录 我的<code>Bot</code> <code>Bot</code>记录）</p>
+</li>
+<li><p>websocket 长连接  服务器主动向客户端发请求</p>
+</li>
+<li><p>扩展形式：后端：Mysql  redis  硬盘  微服务  前端&#x2F;小程序：vue3</p>
+</li>
+</ul>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2023/01/20/King-of-Bots/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
 
   
   <nav class="pagination">
@@ -1284,7 +1293,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">12</span>
+        <span class="site-state-item-count">13</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
