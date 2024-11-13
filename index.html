@@ -128,7 +128,7 @@
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">19</span></a>
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">21</span></a>
 
   </li>
   </ul>
@@ -157,6 +157,263 @@
 
           <div class="content index posts-expand">
             
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://joserii.github.io/2024/11/13/%E5%A4%9A%E6%A8%A1%E6%80%81%E5%A4%A7%E6%A8%A1%E5%9E%8B%E6%B1%87%E6%80%BB/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/author.jpg">
+      <meta itemprop="name" content="Joseri Chen">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Joseri的小站">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2024/11/13/%E5%A4%9A%E6%A8%A1%E6%80%81%E5%A4%A7%E6%A8%A1%E5%9E%8B%E6%B1%87%E6%80%BB/" class="post-title-link" itemprop="url">多模态大模型汇总</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2024-11-13 11:23:07 / 修改时间：11:27:31" itemprop="dateCreated datePublished" datetime="2024-11-13T11:23:07+08:00">2024-11-13</time>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>5.2k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>5 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>多模态大模型发展至今，产生了CLIP、BLIP、BLIP2、InstructBLIP，LLaVA、miniGPT4，等经典模型。以及国内清华的VisualGLM、阿里的Qwen-VL，ailab的InternVL等。每个模型后续还有迭代更新，本文对上述模型做原理解释，以及相关数据支持。</p>
+<h1 id="1-多模态模型"><a href="#1-多模态模型" class="headerlink" title="1. 多模态模型"></a>1. 多模态模型</h1><h2 id="1-1-CLIP"><a href="#1-1-CLIP" class="headerlink" title="1.1 CLIP"></a>1.1 CLIP</h2><p>Contrastive Language-Image Pretraining<br>OpenAI 2021年的工作<br>paper: <a target="_blank" rel="noopener" href="https://arxiv.org/abs/2103.00020" title="https://arxiv.org/abs/2103.00020">https://arxiv.org/abs/2103.00020</a><br>github: <a target="_blank" rel="noopener" href="https://github.com/openai/CLIP" title="https://github.com/openai/CLIP">https://github.com/openai/CLIP</a><br><strong>基本思想：</strong> CLIP通过大规模的图像和文本对进行对比学习，学习在特征空间中对齐文本和图像，从而理解图像内容和文本描述之间的关联。<br><strong>模型结构：</strong></p>
+<ul>
+<li>图像编码器：通常使用Vision Transformer (ViT) 或者其他卷积神经网络 (CNN) 如ResNet作为backbone。</li>
+<li>文本编码器：通常采用BERT或类似基于Transformer的模型。</li>
+<li>特征提取后，图像和文本特征通过归一化处理，然后通过点积计算余弦相似度，使用对比损失（info-NCE loss）进行训练。</li>
+</ul>
+<p> 参考：<br> <a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1SL4y1s7LQ">https://www.bilibili.com/video/BV1SL4y1s7LQ</a>  【未看完】</p>
+<h2 id="1-2-BLIP"><a href="#1-2-BLIP" class="headerlink" title="1.2 BLIP"></a>1.2 BLIP</h2><p>Salesforce Research<br>Bootstrapping Language-Image Pre-training for Unified Vision-Language Understanding and Generation<br>paper: <a target="_blank" rel="noopener" href="https://arxiv.org/abs/2201.12086" title="https://arxiv.org/abs/2201.12086">https://arxiv.org/abs/2201.12086</a><br>github: <a target="_blank" rel="noopener" href="https://github.com/salesforce/BLIP" title="https://github.com/salesforce/BLIP">https://github.com/salesforce/BLIP</a><br><strong>基本思想：</strong> BLIP旨在通过自举方法来提升模型在视觉-语言理解和生成任务上的性能。BLIP还可以通过生成合成图像描述并使用过滤器去除噪声描述，有效地利用了网络上收集的噪声图像-文本对。<br>统一了理解与生成</p>
+<p><strong>模型结构：</strong> BLIP模型采用了多模态混合编码器-解码器（Multimodal Mixture of Encoder-Decoder, MED）架构，该架构可以作为单模态编码器、图像引导的文本编码器或图像引导的文本解码器来操作。MED模型通过三种视觉-语言目标进行联合预训练：图像-文本对比学习（image-text contrastive learning）、图像-文本匹配（image-text matching）和图像条件语言建模（image-conditioned language modeling）。</p>
+<ul>
+<li><strong>图像编码器</strong>：使用视觉Transformer（如ViT）作为图像编码器，将输入图像分割成多个小块（patches），并将其编码为一系列嵌入向量，同时使用额外的[CLS]标记来表示整个图像的特征。</li>
+<li><strong>文本编码器</strong>：采用BERT或类似的基于Transformer的模型作为文本编码器，在文本输入的开始处附加[CLS]标记，以汇总句子的表示。</li>
+<li><strong>图像引导的文本编码器</strong>：在文本编码器的基础上，通过在自注意力（self-attention）层和前馈网络（feed-forward network）之间插入额外的交叉注意力（cross-attention）层来注入视觉信息。</li>
+<li><strong>图像引导的文本解码器</strong>：替换了图像引导的文本编码器中的双向自注意力层为因果自注意力层，并使用[Decode]标记来指示序列的开始和结束。
+<h3 id="Bootstrapping-x2F-自举法"><a href="#Bootstrapping-x2F-自举法" class="headerlink" title="Bootstrapping&#x2F;自举法"></a>Bootstrapping&#x2F;自举法</h3>自举法（Bootstrapping）是一种重采样技术。<br>Bootstrapping基本思想是对现有的数据，不断再随机取小的样本，对每个小样处理数据,得到estimator.从而来了解estimator 的分布。<br>步骤：</li>
+</ul>
+<ol>
+<li>在原有的样本中通过<strong>重抽样（有放回的抽取，即一个数据有可以被重复抽取超过一次）</strong> 一定数量（比如100）的样本。</li>
+<li>基于产生的新样本，计算需要的估计量，均值，方差，协方差。<br>真实的α分布，和基于bootstrap方法得到的1000个α的分布，二者是比较相近的，也就是说Bootstrap有着不错的估计效果。而且当重复次数增多，Bootstrap的估计效果会更好。</li>
+</ol>
+<h2 id="1-3-BLIP2"><a href="#1-3-BLIP2" class="headerlink" title="1.3 BLIP2"></a>1.3 BLIP2</h2><p>Salesforce Research<br>paper: <a target="_blank" rel="noopener" href="https://arxiv.org/abs/2301.12597" title="https://arxiv.org/abs/2301.12597">https://arxiv.org/abs/2301.12597</a><br>github: <a target="_blank" rel="noopener" href="https://github.com/salesforce/LAVIS/tree/main" title="https://github.com/salesforce/LAVIS/tree/main">https://github.com/salesforce/LAVIS/tree/main</a></p>
+<p>Bootstrapping Language-Image Pre-training with Frozen Image Encoders and Large Language Models<br>Based on BLIP and ALBEF</p>
+<p>核心原理：<br>图像（Image）输入了<strong>图像编码器（Image Encoder）</strong>，得到的结果与文本（Text）在 <strong>Q-Former（BERT初始化</strong>）里进行融合，最后送入LLM模型。<br>结构：</p>
+<ul>
+<li>冻结的 视觉编码器：（如ViT-L&#x2F;14或ViT-g&#x2F;14）</li>
+<li>冻结的 LLM：如OPT和FlanT5</li>
+<li><strong>Q-Former（Querying Transformer）</strong>：BLIP2中可训练的模块，轻量的transformer，用于融合特征。熟悉ALBEF或者BLIP的同学或许发现，Q-Former的结构和ALBEF其实很像，如果看<a href="https://link.zhihu.com/?target=https://github.com/salesforce/LAVIS/blob/3ac397aa075c3e60b9521b012dda3660e3e35f1e/lavis/models/blip2_models/blip2_qformer.py%23L86">代码</a>的话，可以发现就是在ALBEF基础上改的。</li>
+</ul>
+<p>相较于ALBEF，最大的不同，就是Learned Query的引入。<br>这些query通过cross-attention与图像的特征交互，通过self-attention 与文本的特征交互。<br>Query是基于两种模态信息得到的；<br>不管多大的backbone，最后都是Query长度的特征输出，大大降低计算量。<br>比如在实际实验中，ViT-L&#x2F;14的模型的输出的特征是257x1024的大小，最后也是<strong>32x768</strong>的<strong>Query特征</strong>。</p>
+<p>training:<br>stage1:<br>三个task: Image-Text Contrastive Learning (ITC)，Image-grounded Text Generation (ITG)，Image-Text Matching (ITM)</p>
+
+
+<p>stage2:<br>针对两类不同LLM设计了不同的任务：</p>
+<ol>
+<li>Decoder类型的LLM（如OPT）：以Query做输入，文本做目标；</li>
+<li>Encoder-Decoder类型的LLM（如FlanT5）：以Query和一句话的前半段做输入，以后半段做目标；<br>FC 层：适应模型的不同embedding维度。<br><img src="/images/Pasted%20image%2020241104151458.png"><br>参考：<br><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/606364639">https://zhuanlan.zhihu.com/p/606364639</a></li>
+</ol>
+<h2 id="1-4-InstructBLIP"><a href="#1-4-InstructBLIP" class="headerlink" title="1.4 InstructBLIP"></a>1.4 InstructBLIP</h2><p>通过指令调整（instruction tuning）来构建通用的视觉-语言模型。<br>Salesforce Research<br>paper: <a target="_blank" rel="noopener" href="https://arxiv.org/abs/2305.06500" title="https://arxiv.org/abs/2305.06500">https://arxiv.org/abs/2305.06500</a><br>github: <a target="_blank" rel="noopener" href="https://github.com/salesforce/LAVIS/tree/main/projects/instructblip" title="https://github.com/salesforce/LAVIS/tree/main/projects/instructblip">https://github.com/salesforce/LAVIS/tree/main/projects/instructblip</a><br><strong>模型结构</strong>：InstructBLIP的模型结构基于BLIP2，介绍了如何把指令微调的范式做在 BLIP-2 模型上面。</p>
+
+
+<p>和BLIP2 类似，InstructBLIP 由图像编码器、LLM 和 Q-Former 组成。<br>在指令微调期间只训练 Q-Former，冻结图像编码器和 LLM 的参数。</p>
+<p>contribution:</p>
+<ol>
+<li>引入 Instruction Tuning （BLIP2中的prefix text换成了 instruction），文本指令不仅提供给冻结的LLM，还提供给Q-Former。</li>
+<li>LLM换做Vicuna<br>BLIP -&gt; BLIP2 -&gt; InstructBLIP 是一条线，都是 来自 Salesforce Research的团队做的。</li>
+</ol>
+<h2 id="1-5-Flamingo🦩"><a href="#1-5-Flamingo🦩" class="headerlink" title="1.5 Flamingo🦩"></a>1.5 Flamingo🦩</h2><p>paper: <a target="_blank" rel="noopener" href="https://arxiv.org/pdf/2204.14198">https://arxiv.org/pdf/2204.14198</a><br>DeepMind 2022 年的工作，比较老了，没有开源<br>Challenge:<br>BLIP2工作中由于只采用了图文对（Image-Text Pair）数据，因此其 in-context 能力欠缺，few-shot 效果不佳。Flamingo 工作中，作者从互联网数据中收集了大量的图文交织（Image-Text Interleaving）数据。</p>
+
+<p><strong>Perceiver Resampler: from varying-size large feature maps to few visual tokens</strong>。从视觉编码器（从图像或视频中获得）接收时空特征，并输出固定数量的视觉token。<br><strong>Vision Encoder: from pixels to features</strong>。我们的视觉编码器是一个预训练且参数被固定的NormalizerFree ResNet (NFNet)</p>
+<p><img src="/images/Pasted%20image%2020241104165438.png"></p>
+<h3 id="Image-Text-Interleaving"><a href="#Image-Text-Interleaving" class="headerlink" title="Image-Text Interleaving"></a>Image-Text Interleaving</h3><p><img src="/images/Pasted%20image%2020241104165206.png"></p>
+<h2 id="1-6-LLaVA"><a href="#1-6-LLaVA" class="headerlink" title="1.6 LLaVA"></a>1.6 LLaVA</h2><p>llava -&gt; llava1.5 -&gt; llava-next</p>
+<h2 id="1-7-Qwen-VL"><a href="#1-7-Qwen-VL" class="headerlink" title="1.7 Qwen-VL"></a>1.7 Qwen-VL</h2><p>Qwen-VL -&gt; Qwen-VL 1.5  -&gt; Qwen-VL2<br>Alibaba</p>
+<p>Qwen-VL 在图像描述、问题回答、视觉定位和灵活互动等任务中表现出色。<br>模型架构：</p>
+<ul>
+<li>LLM：直接使用了Qwen-7B模型的预训练权重</li>
+<li>vision encoder：Openclip的ViT-bigG模型。</li>
+<li>Position-aware Vision-Language Adapter：<br>  为了缓解由于长图像特征序列而产生的效率问题而提出的。<br>  适配器包括一个单层的交叉注意力模块，随机初始化。模块使用一组可训练的向量（嵌入）作为查询向量，使用来自视觉编码器的图像特征作为键进行交叉注意力操作。将图像特征序列压缩成了固定长度的256。<ul>
+<li>作用：<ul>
+<li>压缩图像特征序列</li>
+<li>2D绝对位置编码</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>为了区分图像特征输入和文本特征输入，作者引入了两个特殊的标记：<code>&lt;img&gt;</code>和<code>&lt;/img&gt;</code>。<ul>
+<li>任务：<ul>
+<li>区域描述（Region Descriptions）：这是描述图像中特定区域的文本，通常包括了区域的位置、特征或属性等信息。</li>
+<li>问题（Questions）：与区域描述相关的问题，模型需要理解问题并生成相应的回答。</li>
+<li>检测（Detections）：这些是图像中的检测结果，通常与区域描述和问题相关联。<br>training</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="Qwen2-VL"><a href="#Qwen2-VL" class="headerlink" title="Qwen2-VL"></a>Qwen2-VL</h4><ul>
+<li>支持 context length已经达到128K token</li>
+<li>支持任意分辨率、比例的素材(img + video + text)输入，在视觉评测集(DocVQA, InfoVQA, RealWorldQA, MTVQA, MathVista等)上取得SoTA结果。<ul>
+<li>2D Rotary Position Embedding 引入。</li>
+</ul>
+</li>
+<li>支持img + video + text等多种模态的输入，支持20分钟以上视频输入</li>
+<li>方法：<ul>
+<li>范式Vit+ LLM（没有 adapter）</li>
+</ul>
+</li>
+<li>资源使用<ul>
+<li>目前我在8张a100上训练Qwen2-vl-72b，用deepspeed zero_3勉强能训练起来。</li>
+</ul>
+</li>
+</ul>
+<h2 id="1-8-Intern-VL"><a href="#1-8-Intern-VL" class="headerlink" title="1.8 Intern-VL"></a>1.8 Intern-VL</h2><p>Intern-VL -&gt; Intern-VL1.5 -&gt; Intern-VL2<br>Shanghai AI Lab &amp; SenseTime</p>
+<h2 id="1-9-Yi-vision"><a href="#1-9-Yi-vision" class="headerlink" title="1.9 Yi-vision"></a>1.9 Yi-vision</h2><p><a target="_blank" rel="noopener" href="https://huggingface.co/01-ai/Yi-VL-34B">https://huggingface.co/01-ai/Yi-VL-34B</a><br>01.AI<br>Yi-VL采用 LLaVA 架构，由三个主要组件组成：</p>
+<ul>
+<li>Vision Transformer （ViT）：使用 CLIP ViT-H&#x2F;14 模型 初始化并用于图像编码。</li>
+<li>投影模块：它旨在将图像特征与文本特征空间对齐，由具有层归一化的两层多层感知器 （MLP） 组成。</li>
+<li>大型语言模型（LLM）：使用 <a target="_blank" rel="noopener" href="https://huggingface.co/01-ai/Yi-34B-Chat">Yi-34B-Chat</a> Yi-34B-Chat 或 <a target="_blank" rel="noopener" href="https://huggingface.co/01-ai/Yi-6B-Chat">Yi-6B-Chat</a>进行初始化，在理解和生成英文和中文方面表现出非凡的熟练程度。</li>
+</ul>
+<h1 id="2-分类"><a href="#2-分类" class="headerlink" title="2. 分类"></a>2. 分类</h1><p>多模态模型总体分为两类：</p>
+<ol>
+<li>基于双编码器 dual encoder  对图像和文本分别编码</li>
+<li>基于融合编码器  fusion encoder  除了图像和文本encoder之外，还有额外的transformer 结构用来融合图像和文本。</li>
+</ol>
+<h1 id="3-Pretraining"><a href="#3-Pretraining" class="headerlink" title="3. Pretraining"></a>3. Pretraining</h1><h2 id="3-1-tasks"><a href="#3-1-tasks" class="headerlink" title="3.1 tasks"></a>3.1 tasks</h2><h3 id="Masked-Language-Modeling-MLM"><a href="#Masked-Language-Modeling-MLM" class="headerlink" title="Masked Language Modeling (MLM)"></a>Masked Language Modeling (MLM)</h3><h3 id="Masked-Image-Modeling-MIM"><a href="#Masked-Image-Modeling-MIM" class="headerlink" title="Masked Image Modeling (MIM)"></a>Masked Image Modeling (MIM)</h3><h3 id="Image-Text-Matching-ITM"><a href="#Image-Text-Matching-ITM" class="headerlink" title="Image-Text Matching (ITM)"></a>Image-Text Matching (ITM)</h3><h3 id="Image-Text-Contrastive-Learning-ITC"><a href="#Image-Text-Contrastive-Learning-ITC" class="headerlink" title="Image-Text Contrastive Learning (ITC)"></a>Image-Text Contrastive Learning (ITC)</h3><h1 id="4-评测"><a href="#4-评测" class="headerlink" title="4. 评测"></a>4. 评测</h1><p>VQA</p>
+<p>captioning</p>
+<p>reasoning</p>
+<p>grounding</p>
+<p>img-text retrieval</p>
+<h1 id="其他的经典论文"><a href="#其他的经典论文" class="headerlink" title="其他的经典论文"></a>其他的经典论文</h1><ul>
+<li>ViT  vision transformer</li>
+<li>ALBEF</li>
+<li>transformer</li>
+</ul>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://joserii.github.io/2024/11/13/mm/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/author.jpg">
+      <meta itemprop="name" content="Joseri Chen">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Joseri的小站">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2024/11/13/mm/" class="post-title-link" itemprop="url">mm</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2024-11-13 11:22:33" itemprop="dateCreated datePublished" datetime="2024-11-13T11:22:33+08:00">2024-11-13</time>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>0</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
       
   
   
@@ -1023,191 +1280,10 @@
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://joserii.github.io/2023/01/27/template-for-algorithm/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/author.jpg">
-      <meta itemprop="name" content="Joseri Chen">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Joseri的小站">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2023/01/27/template-for-algorithm/" class="post-title-link" itemprop="url">常用算法模板</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2023-01-27 17:01:40" itemprop="dateCreated datePublished" datetime="2023-01-27T17:01:40+08:00">2023-01-27</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2023-02-03 10:31:10" itemprop="dateModified" datetime="2023-02-03T10:31:10+08:00">2023-02-03</time>
-              </span>
-
-          <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>27k</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>25 分钟</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="算法模板"><a href="#算法模板" class="headerlink" title="算法模板"></a>算法模板</h1><h2 id="算法学习路线"><a href="#算法学习路线" class="headerlink" title="算法学习路线"></a>算法学习路线</h2><h3 id="level-1-语法基础课"><a href="#level-1-语法基础课" class="headerlink" title="level-1 语法基础课"></a>level-1 语法基础课</h3><ol>
-<li>变量、表达式与顺序语句</li>
-<li>scanf&#x2F;printf语法及判断语句</li>
-<li>循环语句</li>
-<li>数组</li>
-<li>字符串</li>
-<li>函数</li>
-<li>结构体、类、指针与引用</li>
-<li>STL容器、位运算与常用库函数</li>
-</ol>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2023/01/27/template-for-algorithm/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://joserii.github.io/2023/01/27/Java-basic-syntax/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/author.jpg">
-      <meta itemprop="name" content="Joseri Chen">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Joseri的小站">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2023/01/27/Java-basic-syntax/" class="post-title-link" itemprop="url">Java基础语法</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2023-01-27 16:52:38" itemprop="dateCreated datePublished" datetime="2023-01-27T16:52:38+08:00">2023-01-27</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2023-02-03 10:30:39" itemprop="dateModified" datetime="2023-02-03T10:30:39+08:00">2023-02-03</time>
-              </span>
-
-          <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>9.8k</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>9 分钟</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="Java基础语法"><a href="#Java基础语法" class="headerlink" title="Java基础语法"></a>Java基础语法</h1>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2023/01/27/Java-basic-syntax/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
   </nav>
 
 
@@ -1275,7 +1351,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">19</span>
+          <span class="site-state-item-count">21</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -1342,13 +1418,13 @@
       <i class="fa fa-chart-area"></i>
     </span>
       <span class="post-meta-item-text">站点总字数：</span>
-    <span title="站点总字数">71k</span>
+    <span title="站点总字数">76k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">1:05</span>
+    <span title="站点阅读时长">1:09</span>
 </div>
 
         
