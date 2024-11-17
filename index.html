@@ -123,12 +123,12 @@
   </li>
         <li class="menu-item menu-item-tags">
 
-    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">13</span></a>
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">14</span></a>
 
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">20</span></a>
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">21</span></a>
 
   </li>
   </ul>
@@ -161,6 +161,129 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://joserii.github.io/2024/11/17/Leetcode%E5%91%A8%E8%B5%9B424/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/author.jpg">
+      <meta itemprop="name" content="Joseri Chen">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Joseri的小站">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2024/11/17/Leetcode%E5%91%A8%E8%B5%9B424/" class="post-title-link" itemprop="url">Leetcode周赛424</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2024-11-17 20:19:52 / 修改时间：20:21:25" itemprop="dateCreated datePublished" datetime="2024-11-17T20:19:52+08:00">2024-11-17</time>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>3.1k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>3 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>&#x8FD9;&#x6B21;&#x5468;&#x8D5B;&#x4F9D;&#x7136;&#x53EA;&#x505A;&#x51FA;&#x4E86;&#x4E09;&#x9898;&#xFF1A;<br>T1-10min  2wa<br>T2-5min<br>T3-17min  1wa<br>&#x590D;&#x76D8;&#x4E00;&#x4E0B;&#xFF1A;</p>
+<h1 id="T1"><a href="#T1" class="headerlink" title="T1"></a>T1</h1><p><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/make-array-elements-equal-to-zero/">https://leetcode.cn/problems/make-array-elements-equal-to-zero/</a></p>
+<h2 id="&#x9898;&#x9762;"><a href="#&#x9898;&#x9762;" class="headerlink" title="&#x9898;&#x9762;"></a>&#x9898;&#x9762;</h2><p>&#x7ED9;&#x4F60;&#x4E00;&#x4E2A;&#x6574;&#x6570;&#x6570;&#x7EC4;&#xA0;<code>nums</code>&#xA0;&#x3002;<br>&#x5F00;&#x59CB;&#x65F6;&#xFF0C;&#x9009;&#x62E9;&#x4E00;&#x4E2A;&#x6EE1;&#x8DB3;&#xA0;<code>nums[curr] == 0</code>&#xA0;&#x7684;&#x8D77;&#x59CB;&#x4F4D;&#x7F6E;&#xA0;<code>curr</code>&#xA0;&#xFF0C;&#x5E76;&#x9009;&#x62E9;&#x4E00;&#x4E2A;&#x79FB;&#x52A8;&#xA0;<strong>&#x65B9;&#x5411;</strong>&#xA0;&#xFF1A;&#x5411;&#x5DE6;&#x6216;&#x8005;&#x5411;&#x53F3;&#x3002;<br>&#x6B64;&#x540E;&#xFF0C;&#x4F60;&#x9700;&#x8981;&#x91CD;&#x590D;&#x4E0B;&#x9762;&#x7684;&#x8FC7;&#x7A0B;&#xFF1A;</p>
+<ul>
+<li>&#x5982;&#x679C;&#xA0;<code>curr</code>&#xA0;&#x8D85;&#x8FC7;&#x8303;&#x56F4;&#xA0;<code>[0, n - 1]</code>&#xA0;&#xFF0C;&#x8FC7;&#x7A0B;&#x7ED3;&#x675F;&#x3002;</li>
+<li>&#x5982;&#x679C;&#xA0;<code>nums[curr] == 0</code>&#xA0;&#xFF0C;&#x6CBF;&#x5F53;&#x524D;&#x65B9;&#x5411;&#x7EE7;&#x7EED;&#x79FB;&#x52A8;&#xFF1A;&#x5982;&#x679C;&#x5411;&#x53F3;&#x79FB;&#xFF0C;&#x5219;&#xA0;<strong>&#x9012;&#x589E;</strong>&#xA0;<code>curr</code>&#xA0;&#xFF1B;&#x5982;&#x679C;&#x5411;&#x5DE6;&#x79FB;&#xFF0C;&#x5219;&#xA0;<strong>&#x9012;&#x51CF;</strong>&#xA0;<code>curr</code>&#xA0;&#x3002;</li>
+<li>&#x5982;&#x679C;&#xA0;<code>nums[curr] &gt; 0</code>:<ul>
+<li>&#x5C06;&#xA0;<code>nums[curr]</code>&#xA0;&#x51CF;&#xA0;1 &#x3002;</li>
+<li><strong>&#x53CD;&#x8F6C;</strong>&#xA0;&#x79FB;&#x52A8;&#x65B9;&#x5411;&#xFF08;&#x5411;&#x5DE6;&#x53D8;&#x5411;&#x53F3;&#xFF0C;&#x53CD;&#x4E4B;&#x4EA6;&#x7136;&#xFF09;&#x3002;</li>
+<li>&#x6CBF;&#x65B0;&#x65B9;&#x5411;&#x79FB;&#x52A8;&#x4E00;&#x6B65;&#x3002;<br>&#x5982;&#x679C;&#x5728;&#x7ED3;&#x675F;&#x6574;&#x4E2A;&#x8FC7;&#x7A0B;&#x540E;&#xFF0C;<code>nums</code>&#xA0;&#x4E2D;&#x7684;&#x6240;&#x6709;&#x5143;&#x7D20;&#x90FD;&#x53D8;&#x4E3A; 0 &#xFF0C;&#x5219;&#x8BA4;&#x4E3A;&#x9009;&#x51FA;&#x7684;&#x521D;&#x59CB;&#x4F4D;&#x7F6E;&#x548C;&#x79FB;&#x52A8;&#x65B9;&#x5411;&#xA0;<strong>&#x6709;&#x6548;</strong>&#xA0;&#x3002;<br>&#x8FD4;&#x56DE;&#x53EF;&#x80FD;&#x7684;&#x6709;&#x6548;&#x9009;&#x62E9;&#x65B9;&#x6848;&#x6570;&#x76EE;&#x3002;</li>
+</ul>
+</li>
+<li><code>1 &lt;= nums.length &lt;= 100</code></li>
+<li><code>0 &lt;= nums[i] &lt;= 100</code></li>
+<li>&#x81F3;&#x5C11;&#x5B58;&#x5728;&#x4E00;&#x4E2A;&#x5143;&#x7D20;&#xA0;<code>i</code>&#xA0;&#x6EE1;&#x8DB3;&#xA0;<code>nums[i] == 0</code>&#xA0;&#x3002;</li>
+</ul>
+<h2 id="&#x5206;&#x6790;"><a href="#&#x5206;&#x6790;" class="headerlink" title="&#x5206;&#x6790;"></a>&#x5206;&#x6790;</h2><p>&#x7531;&#x4E8E;&#x6570;&#x636E;&#x91CF;&#x6BD4;&#x8F83;&#x5C0F;&#xFF0C;&#x5F88;&#x591A;&#x4EBA;&#x90FD;&#x662F;&#x6A21;&#x62DF;&#x505A;&#x7684;&#x3002;&#x4F46;&#x662F;&#x6A21;&#x62DF;&#x7684;&#x4EE3;&#x7801;&#x4E5F;&#x6BD4;&#x8F83;&#x590D;&#x6742;&#xFF0C;&#x6D89;&#x53CA;&#x5230;&#x5DE6;&#x53F3;&#x65B9;&#x5411;&#x8F6C;&#x6362;&#x3002;&#x6240;&#x4EE5;&#x53EF;&#x4EE5;&#x627E;&#x4E0B;&#x89C4;&#x5F8B;&#xFF0C;&#x53D1;&#x73B0;&#x5F53;<code>nums[i] == 0</code>&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x5982;&#x679C;&#x5DE6;&#x53F3;&#x4E24;&#x8FB9;&#x7684;&#x6570;&#x7684;&#x548C;&#x76F8;&#x7B49;&#xFF0C;&#x90A3;&#x4E48;&#x5C31;&#x53EF;&#x4EE5;&#x5F80;&#x4E24;&#x4E2A;&#x65B9;&#x5411;&#x4EFB;&#x9009;&#x4E00;&#x4E2A;&#x65B9;&#x5411;&#x8D70;&#x5373;&#x53EF;&#x3002;&#x4E8E;&#x662F;&#x76F4;&#x63A5;&#x8FD9;&#x6837;&#x5199;&#x4E86;&#xFF0C;&#x7136;&#x540E;wa&#x4E86;&#x3002;</p>
+<p>&#x5176;&#x5B9E;&#x8FD8;&#x53EF;&#x4EE5;&#x53D1;&#x73B0;&#xFF0C;&#x5F53;&#x5DE6;&#x53F3;&#x4E24;&#x8FB9;&#x7684;&#x6570;&#x7684;&#x548C; suml&#x548C;sumr&#xFF0C;&#x5982;&#x679C;<code>|suml - sumr| == 1</code> &#xFF0C;&#x90A3;&#x4E48;&#x4E5F;&#x80FD;&#x6210;&#x7ACB;&#xFF0C;&#x4F46;&#x662F;&#x53EA;&#x80FD;&#x5F80;&#x5927;&#x7684;&#x4E00;&#x8FB9;&#x8D70;&#x3002;</p>
+<h2 id="&#x4EE3;&#x7801;"><a href="#&#x4EE3;&#x7801;" class="headerlink" title="&#x4EE3;&#x7801;"></a>&#x4EE3;&#x7801;</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> {</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">countValidSelections</span><span class="params">(vector&lt;<span class="type">int</span>&gt;&amp; nums)</span> </span>{</span><br><span class="line">        <span class="type">int</span> n = nums.<span class="built_in">size</span>();</span><br><span class="line">        <span class="type">int</span> sum = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">auto</span> x: nums) sum += x;</span><br><span class="line">        <span class="type">int</span> cur = <span class="number">0</span>;</span><br><span class="line">        <span class="type">int</span> ans = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">0</span>; i &lt; n; i ++ ) {</span><br><span class="line">            cur += nums[i];</span><br><span class="line">            <span class="keyword">if</span>(nums[i] == <span class="number">0</span>) {</span><br><span class="line">                <span class="keyword">if</span>(cur == sum - cur) ans += <span class="number">2</span>; <span class="comment">// &#x5DE6;&#x53F3;&#x4E24;&#x8FB9;&#x76F8;&#x7B49;</span></span><br><span class="line">                <span class="keyword">else</span> <span class="keyword">if</span>(<span class="built_in">abs</span>(cur - (sum - cur)) == <span class="number">1</span>) ans += <span class="number">1</span>; <span class="comment">// &#x5DE6;&#x53F3;&#x4E24;&#x8FB9;&#x5DEE;1</span></span><br><span class="line">            }</span><br><span class="line">        }</span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    }</span><br><span class="line">};</span><br></pre></td></tr></table></figure>
+
+<h1 id="T2"><a href="#T2" class="headerlink" title="T2"></a>T2</h1><p><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/zero-array-transformation-i/">https://leetcode.cn/problems/zero-array-transformation-i/</a></p>
+<h2 id="&#x9898;&#x9762;-1"><a href="#&#x9898;&#x9762;-1" class="headerlink" title="&#x9898;&#x9762;"></a>&#x9898;&#x9762;</h2><p>&#x7ED9;&#x5B9A;&#x4E00;&#x4E2A;&#x957F;&#x5EA6;&#x4E3A;&#xA0;<code>n</code>&#xA0;&#x7684;&#x6574;&#x6570;&#x6570;&#x7EC4;&#xA0;<code>nums</code>&#xA0;&#x548C;&#x4E00;&#x4E2A;&#x4E8C;&#x7EF4;&#x6570;&#x7EC4;&#xA0;<code>queries</code>&#xFF0C;&#x5176;&#x4E2D;&#xA0;<code>queries[i] = [li, ri]</code>&#x3002;<br>&#x5BF9;&#x4E8E;&#x6BCF;&#x4E2A;&#x67E5;&#x8BE2;&#xA0;<code>queries[i]</code>&#xFF1A;</p>
+<ul>
+<li>&#x5728;&#xA0;<code>nums</code>&#xA0;&#x7684;&#x4E0B;&#x6807;&#x8303;&#x56F4;&#xA0;<code>[li, ri]</code>&#xA0;&#x5185;&#x9009;&#x62E9;&#x4E00;&#x4E2A;&#x4E0B;&#x6807;&#x5B50;&#x96C6;&#x3002;</li>
+<li>&#x5C06;&#x9009;&#x4E2D;&#x7684;&#x6BCF;&#x4E2A;&#x4E0B;&#x6807;&#x5BF9;&#x5E94;&#x7684;&#x5143;&#x7D20;&#x503C;&#x51CF; 1&#x3002;</li>
+</ul>
+<p><strong>&#x96F6;&#x6570;&#x7EC4;</strong>&#xA0;&#x662F;&#x6307;&#x6240;&#x6709;&#x5143;&#x7D20;&#x90FD;&#x7B49;&#x4E8E; 0 &#x7684;&#x6570;&#x7EC4;&#x3002;<br>&#x5982;&#x679C;&#x5728;&#x6309;&#x987A;&#x5E8F;&#x5904;&#x7406;&#x6240;&#x6709;&#x67E5;&#x8BE2;&#x540E;&#xFF0C;&#x53EF;&#x4EE5;&#x5C06;&#xA0;<code>nums</code>&#xA0;&#x8F6C;&#x6362;&#x4E3A;&#xA0;<strong>&#x96F6;&#x6570;&#x7EC4;</strong>&#xA0;&#xFF0C;&#x5219;&#x8FD4;&#x56DE;&#xA0;<code>true</code>&#xFF0C;&#x5426;&#x5219;&#x8FD4;&#x56DE;&#xA0;<code>false</code>&#x3002;<br>&#x6570;&#x7EC4;&#x7684;&#xA0;<strong>&#x5B50;&#x96C6;</strong>&#xA0;&#x662F;&#x5BF9;&#x6570;&#x7EC4;&#x5143;&#x7D20;&#x7684;&#x9009;&#x62E9;&#xFF08;&#x53EF;&#x80FD;&#x4E3A;&#x7A7A;&#xFF09;&#x3002;</p>
+<h2 id="&#x5206;&#x6790;-1"><a href="#&#x5206;&#x6790;-1" class="headerlink" title="&#x5206;&#x6790;"></a>&#x5206;&#x6790;</h2><p>&#x5DEE;&#x5206;&#x6570;&#x7EC4;&#x6A21;&#x7248;&#x9898;&#xFF0C;&#x6BCF;&#x4E2A;&#x4F4D;&#x7F6E;&#x90FD;&#x6709;&#x5BF9;&#x5E94;&#x64CD;&#x4F5C;&#x5B8C;&#x7684;&#x6700;&#x5927;&#x503C;&#xFF0C;&#x5982;&#x679C;&#x6570;&#x7EC4;&#x8BE5;&#x4F4D;&#x7F6E;&#x8D85;&#x8FC7;&#x4E86;&#x6700;&#x5927;&#x9608;&#x503C;&#xFF0C;&#x5219;&#x4E0D;&#x6210;&#x7ACB;&#x3002;</p>
+<h2 id="&#x4EE3;&#x7801;-1"><a href="#&#x4EE3;&#x7801;-1" class="headerlink" title="&#x4EE3;&#x7801;"></a>&#x4EE3;&#x7801;</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> {</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">bool</span> <span class="title">isZeroArray</span><span class="params">(vector&lt;<span class="type">int</span>&gt;&amp; nums, vector&lt;vector&lt;<span class="type">int</span>&gt;&gt;&amp; queries)</span> </span>{</span><br><span class="line">        <span class="type">int</span> n = nums.<span class="built_in">size</span>(), m = queries.<span class="built_in">size</span>();</span><br><span class="line">        <span class="function">vector&lt;<span class="type">int</span>&gt; <span class="title">diff</span><span class="params">(n + <span class="number">1</span>)</span>, <span class="title">cnt</span><span class="params">(n + <span class="number">1</span>)</span></span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">0</span>; i &lt; m; i ++ ) {</span><br><span class="line">            <span class="type">int</span> l = queries[i][<span class="number">0</span>], r = queries[i][<span class="number">1</span>];</span><br><span class="line">            diff[l] ++, diff[r + <span class="number">1</span>] --;</span><br><span class="line">        }</span><br><span class="line">        cnt[<span class="number">0</span>] = diff[<span class="number">0</span>];</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">1</span>; i &lt; n; i ++ ) {</span><br><span class="line">            cnt[i] = cnt[i - <span class="number">1</span>] + diff[i];</span><br><span class="line">        }</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">0</span>; i &lt; n; i ++ ) {</span><br><span class="line">            cout &lt;&lt; cnt[i]  &lt;&lt;  <span class="string">&quot; &quot;</span>;  </span><br><span class="line">        }</span><br><span class="line">        cout &lt;&lt; endl;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">0</span>; i &lt; n; i ++ ) {</span><br><span class="line">            <span class="keyword">if</span>(nums[i] &gt; cnt[i]) <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">        }</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">    }</span><br><span class="line">};</span><br></pre></td></tr></table></figure>
+
+<h1 id="T3"><a href="#T3" class="headerlink" title="T3"></a>T3</h1><p><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/zero-array-transformation-ii/description/">https://leetcode.cn/problems/zero-array-transformation-ii/description/</a></p>
+<h2 id="&#x9898;&#x9762;-2"><a href="#&#x9898;&#x9762;-2" class="headerlink" title="&#x9898;&#x9762;"></a>&#x9898;&#x9762;</h2><p>&#x7ED9;&#x4F60;&#x4E00;&#x4E2A;&#x957F;&#x5EA6;&#x4E3A;&#xA0;<code>n</code>&#xA0;&#x7684;&#x6574;&#x6570;&#x6570;&#x7EC4;&#xA0;<code>nums</code>&#xA0;&#x548C;&#x4E00;&#x4E2A;&#x4E8C;&#x7EF4;&#x6570;&#x7EC4;&#xA0;<code>queries</code>&#xFF0C;&#x5176;&#x4E2D;&#xA0;<code>queries[i] = [li, ri, vali]</code>&#x3002;</p>
+<p>&#x6BCF;&#x4E2A;&#xA0;<code>queries[i]</code>&#xA0;&#x8868;&#x793A;&#x5728;&#xA0;<code>nums</code>&#xA0;&#x4E0A;&#x6267;&#x884C;&#x4EE5;&#x4E0B;&#x64CD;&#x4F5C;&#xFF1A;</p>
+<ul>
+<li>&#x5C06;&#xA0;<code>nums</code>&#xA0;&#x4E2D;&#xA0;<code>[li, ri]</code>&#xA0;&#x8303;&#x56F4;&#x5185;&#x7684;&#x6BCF;&#x4E2A;&#x4E0B;&#x6807;&#x5BF9;&#x5E94;&#x5143;&#x7D20;&#x7684;&#x503C;&#xA0;<strong>&#x6700;&#x591A;</strong>&#xA0;&#x51CF;&#x5C11;&#xA0;<code>vali</code>&#x3002;</li>
+<li>&#x6BCF;&#x4E2A;&#x4E0B;&#x6807;&#x7684;&#x51CF;&#x5C11;&#x7684;&#x6570;&#x503C;&#x53EF;&#x4EE5;<strong>&#x72EC;&#x7ACB;</strong>&#x9009;&#x62E9;&#x3002;</li>
+</ul>
+<p><strong>&#x96F6;&#x6570;&#x7EC4;</strong>&#xA0;&#x662F;&#x6307;&#x6240;&#x6709;&#x5143;&#x7D20;&#x90FD;&#x7B49;&#x4E8E; 0 &#x7684;&#x6570;&#x7EC4;&#x3002;</p>
+<p>&#x8FD4;&#x56DE;&#xA0;<code>k</code>&#xA0;&#x53EF;&#x4EE5;&#x53D6;&#x5230;&#x7684;&#xA0;<strong>&#x6700;&#x5C0F;****&#x975E;&#x8D1F;</strong>&#xA0;&#x503C;&#xFF0C;&#x4F7F;&#x5F97;&#x5728;&#xA0;<strong>&#x987A;&#x5E8F;</strong>&#xA0;&#x5904;&#x7406;&#x524D;&#xA0;<code>k</code>&#xA0;&#x4E2A;&#x67E5;&#x8BE2;&#x540E;&#xFF0C;<code>nums</code>&#xA0;&#x53D8;&#x6210;&#xA0;<strong>&#x96F6;&#x6570;&#x7EC4;</strong>&#x3002;&#x5982;&#x679C;&#x4E0D;&#x5B58;&#x5728;&#x8FD9;&#x6837;&#x7684;&#xA0;<code>k</code>&#xFF0C;&#x5219;&#x8FD4;&#x56DE; -1&#x3002;<br><strong>&#x63D0;&#x793A;&#xFF1A;</strong></p>
+<ul>
+<li><code>1 &lt;= nums.length &lt;= 105</code></li>
+<li><code>0 &lt;= nums[i] &lt;= 5 * 105</code></li>
+<li><code>1 &lt;= queries.length &lt;= 105</code></li>
+<li><code>queries[i].length == 3</code></li>
+<li><code>0 &lt;= li &lt;= ri &lt; nums.length</code></li>
+<li><code>1 &lt;= vali &lt;= 5</code></li>
+</ul>
+<h2 id="&#x5206;&#x6790;-2"><a href="#&#x5206;&#x6790;-2" class="headerlink" title="&#x5206;&#x6790;"></a>&#x5206;&#x6790;</h2><p>&#x4E8C;&#x5206;&#x7B54;&#x6848;+&#x5DEE;&#x5206;&#x6570;&#x7EC4;&#x3002;<br>&#x5DEE;&#x5206;&#x6570;&#x7EC4;&#x987E;&#x540D;&#x601D;&#x4E49;&#xFF0C;&#x7C7B;&#x4F3C;T2&#x7684;&#x64CD;&#x4F5C;&#xFF0C;&#x53EA;&#x662F;&#x8FD9;&#x91CC;&#x4ECE;&#x52A0;&#x51CF;1&#x53D8;&#x6210;&#x4E86;&#x5E38;&#x6570;&#x3002;&#x53EF;&#x4EE5;&#x5728;o(1)&#x65F6;&#x95F4;&#x5185;&#x5B8C;&#x6210;&#x533A;&#x95F4;&#x4E0A;&#x52A0;&#x51CF;&#x5B9A;&#x503C;&#x3002;<br>&#x7531;&#x4E8E;k&#x8D8A;&#x5927;&#xFF0C;&#x8D8A;&#x80FD;&#x6EE1;&#x8DB3;&#x9898;&#x610F;&#xFF0C;&#x4E14;&#x9898;&#x610F;&#x4E3A;&#x627E;&#x4E00;&#x4E2A;&#x6700;&#x5C0F;&#x7684;k&#xFF0C;&#x6240;&#x4EE5;&#x8FD9;&#x4E00;&#x9898;&#x7684;&#x7B54;&#x6848;&#x636E;&#x6709;&#x5355;&#x8C03;&#x6027;&#xFF0C;&#x53EF;&#x4EE5;&#x4E8C;&#x4EFD;&#x7B54;&#x6848;&#x533A;&#x95F4;&#x3002;&#x8FD9;&#x91CC;&#x5176;&#x5B9E;k&#x7684;&#x53D6;&#x503C;&#x53EF;&#x4EE5;&#x662F;<code>[1, m]</code>&#xFF0C;&#x6240;&#x4EE5;&#x53F3;&#x8FB9;&#x754C;&#x53EF;&#x4EE5;&#x8BBE;&#x7F6E;&#x4E3A; <code>m + 1</code> &#x3002;&#x5F53;&#x6700;&#x7EC8;&#x5F97;&#x5230;m+1&#x5219;&#x8BC1;&#x660E;&#x6CA1;&#x6709;valid&#x7B54;&#x6848;&#x3002;<br>&#x8FD9;&#x91CC;&#x4E8C;&#x5206;&#x679A;&#x4E3E;&#x7B54;&#x6848;&#x533A;&#x95F4;&#xFF0C;&#x5982;&#x679C;&#x5728;&#x533A;&#x95F4;&#x5185;&#x5C31;&#x628A;&#x53F3;&#x7AEF;&#x70B9; r = mid; &#x5982;&#x679C;&#x4E0D;&#x5728;&#x533A;&#x95F4;&#x5185;&#x5C31;&#x628A;&#x5DE6;&#x65AD;&#x70B9; l = mid + 1;</p>
+<h2 id="&#x4EE3;&#x7801;-2"><a href="#&#x4EE3;&#x7801;-2" class="headerlink" title="&#x4EE3;&#x7801;"></a>&#x4EE3;&#x7801;</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> {</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">minZeroArray</span><span class="params">(vector&lt;<span class="type">int</span>&gt;&amp; nums, vector&lt;vector&lt;<span class="type">int</span>&gt;&gt;&amp; q)</span> </span>{</span><br><span class="line">        <span class="type">int</span> n = nums.<span class="built_in">size</span>(), m = q.<span class="built_in">size</span>();</span><br><span class="line">        <span class="type">int</span> l = <span class="number">0</span>, r = m + <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">auto</span> check = [&amp;](<span class="type">int</span> k) -&gt; <span class="type">bool</span> {</span><br><span class="line">            vector&lt;<span class="type">int</span>&gt; <span class="built_in">diff</span>(n + <span class="number">1</span>), <span class="built_in">cnt</span>(n + <span class="number">1</span>);</span><br><span class="line">            <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">0</span>; i &lt; k; i ++ ) {</span><br><span class="line">                <span class="type">int</span> l = q[i][<span class="number">0</span>], r = q[i][<span class="number">1</span>], val = q[i][<span class="number">2</span>];</span><br><span class="line">                diff[l] += val;</span><br><span class="line">                diff[r + <span class="number">1</span>] -= val;</span><br><span class="line">            }</span><br><span class="line">            <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">0</span>; i &lt; n; i ++ ) {</span><br><span class="line">                cnt[i] = cnt[<span class="built_in">max</span>(<span class="number">0</span>, i - <span class="number">1</span>)] + diff[i];</span><br><span class="line">                <span class="keyword">if</span>(cnt[i] &lt; nums[i]) <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">            }</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">        };</span><br><span class="line">        <span class="keyword">while</span>(l &lt; r) {</span><br><span class="line">            <span class="type">int</span> mid = (l + r) / <span class="number">2</span>;</span><br><span class="line">            <span class="keyword">if</span>(<span class="built_in">check</span>(mid)) r = mid;</span><br><span class="line">            <span class="keyword">else</span> l = mid + <span class="number">1</span>;</span><br><span class="line">        }</span><br><span class="line">        <span class="keyword">return</span> l == m + <span class="number">1</span> ? <span class="number">-1</span> : l;</span><br><span class="line">    }</span><br><span class="line">};</span><br></pre></td></tr></table></figure>
+
+<h1 id="T4"><a href="#T4" class="headerlink" title="T4"></a>T4</h1><p>TODO&#x2026;.</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="https://joserii.github.io/2024/11/13/%E5%A4%9A%E6%A8%A1%E6%80%81%E5%A4%A7%E6%A8%A1%E5%9E%8B%E6%B1%87%E6%80%BB/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -186,7 +309,7 @@
               <span class="post-meta-item-text">发表于</span>
               
 
-              <time title="创建时间：2024-11-13 11:37:22 / 修改时间：11:47:15" itemprop="dateCreated datePublished" datetime="2024-11-13T11:37:22+08:00">2024-11-13</time>
+              <time title="创建时间：2024-11-13 11:37:22 / 修改时间：12:13:05" itemprop="dateCreated datePublished" datetime="2024-11-13T11:37:22+08:00">2024-11-13</time>
             </span>
 
           <br>
@@ -1212,105 +1335,10 @@
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://joserii.github.io/2023/01/27/template-for-algorithm/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/author.jpg">
-      <meta itemprop="name" content="Joseri Chen">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Joseri的小站">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2023/01/27/template-for-algorithm/" class="post-title-link" itemprop="url">常用算法模板</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2023-01-27 17:01:40" itemprop="dateCreated datePublished" datetime="2023-01-27T17:01:40+08:00">2023-01-27</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2023-02-03 10:31:10" itemprop="dateModified" datetime="2023-02-03T10:31:10+08:00">2023-02-03</time>
-              </span>
-
-          <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>27k</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>25 分钟</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="&#x7B97;&#x6CD5;&#x6A21;&#x677F;"><a href="#&#x7B97;&#x6CD5;&#x6A21;&#x677F;" class="headerlink" title="&#x7B97;&#x6CD5;&#x6A21;&#x677F;"></a>&#x7B97;&#x6CD5;&#x6A21;&#x677F;</h1><h2 id="&#x7B97;&#x6CD5;&#x5B66;&#x4E60;&#x8DEF;&#x7EBF;"><a href="#&#x7B97;&#x6CD5;&#x5B66;&#x4E60;&#x8DEF;&#x7EBF;" class="headerlink" title="&#x7B97;&#x6CD5;&#x5B66;&#x4E60;&#x8DEF;&#x7EBF;"></a>&#x7B97;&#x6CD5;&#x5B66;&#x4E60;&#x8DEF;&#x7EBF;</h2><h3 id="level-1-&#x8BED;&#x6CD5;&#x57FA;&#x7840;&#x8BFE;"><a href="#level-1-&#x8BED;&#x6CD5;&#x57FA;&#x7840;&#x8BFE;" class="headerlink" title="level-1 &#x8BED;&#x6CD5;&#x57FA;&#x7840;&#x8BFE;"></a>level-1 &#x8BED;&#x6CD5;&#x57FA;&#x7840;&#x8BFE;</h3><ol>
-<li>&#x53D8;&#x91CF;&#x3001;&#x8868;&#x8FBE;&#x5F0F;&#x4E0E;&#x987A;&#x5E8F;&#x8BED;&#x53E5;</li>
-<li>scanf/printf&#x8BED;&#x6CD5;&#x53CA;&#x5224;&#x65AD;&#x8BED;&#x53E5;</li>
-<li>&#x5FAA;&#x73AF;&#x8BED;&#x53E5;</li>
-<li>&#x6570;&#x7EC4;</li>
-<li>&#x5B57;&#x7B26;&#x4E32;</li>
-<li>&#x51FD;&#x6570;</li>
-<li>&#x7ED3;&#x6784;&#x4F53;&#x3001;&#x7C7B;&#x3001;&#x6307;&#x9488;&#x4E0E;&#x5F15;&#x7528;</li>
-<li>STL&#x5BB9;&#x5668;&#x3001;&#x4F4D;&#x8FD0;&#x7B97;&#x4E0E;&#x5E38;&#x7528;&#x5E93;&#x51FD;&#x6570;</li>
-</ol>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2023/01/27/template-for-algorithm/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
   </nav>
 
 
@@ -1378,14 +1406,14 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">20</span>
+          <span class="site-state-item-count">21</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">13</span>
+        <span class="site-state-item-count">14</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -1445,13 +1473,13 @@
       <i class="fa fa-chart-area"></i>
     </span>
       <span class="post-meta-item-text">站点总字数：</span>
-    <span title="站点总字数">76k</span>
+    <span title="站点总字数">79k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">1:09</span>
+    <span title="站点阅读时长">1:12</span>
 </div>
 
         
